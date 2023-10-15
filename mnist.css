@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(255, 255, 255);
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('imgs/Screenshot 2023-06-28 at 11.03.47 PM.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(5px); /* This applies the blur effect */
+    z-index: -1; /* This places the pseudo-element below the actual content */
+}
+
+/* Model Upload Section */
+#modelUpload {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#modelUpload:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Inference Section */
+#dataInput {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    color: white;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/* Not Ready Message */
+font {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    color: red;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+}

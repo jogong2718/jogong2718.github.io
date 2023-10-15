@@ -121,10 +121,34 @@ body::before {
     position: fixed;
     top: 10px;
     right: 10px;
+    display: inline-block;
+}
+.dropdown-content {
+    top: 35px;
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+    min-width: 160px;
+    border-radius: 5px;
+    z-index: 1;
+}
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+.dropdown-content a:hover {
+    background-color: #cecece;
+    border-radius: 4px;
 }
 
+
+
+
 .dropbtn {
-    background-color: #333; /* Dark grey button */
+    background-color: #2e2e2e; /* Dark grey button */
     color: #f5f5f5; /* Light grey text on button */
     padding: 10px 20px;
     border: none;
@@ -135,26 +159,27 @@ body::before {
 
 .dropbtn:hover {
     background-color: #111; /* Darker grey on hover */
+    border-radius: 4px;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     right: 0;
-    background-color: #fff; /* White background */
+    background-color: #2e2e2e; /* White background */
     border: 1px solid #e0e0e0; /* Grey border */
-    border-radius: 4px;
+    border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     min-width: 160px;
 }
-
+/* 
 .dropdown-content a {
-    color: #333; /* Dark grey text */
+    color: #333;
     padding: 10px 16px;
     display: block;
     transition: background-color 0.3s ease;
 }
 
 .dropdown-content a:hover {
-    background-color: #f0f0f0; /* Slightly darker background on hover */
-}
+    background-color: #f0f0f0;
+} */
