@@ -1,174 +1,89 @@
-<!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Jonathan Gong's Personal Website</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan Gong's Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('imgs/Screenshot 2023-06-28 at 11.03.47 PM.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            width: 70%;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .profile-image {
+            width: 150px;
+            border-radius: 50%;
+        }
+        .bio {
+            flex: 1;
+        }
+        /* Dropdown styling */
+        .dropdown {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0,0,0,0.8);
+            min-width: 160px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+    </style>
 </head>
-
-<body class="w3-light-grey">
-    <!-- Page Container -->
-    <div class="w3-content w3-margin-top" style="max-width:1400px;">
-        <!-- The Grid -->
-        <div class="w3-row-padding">
-            <!-- Left Column -->
-            <div class="w3-third">
-                <div class="w3-white w3-text-black w3-card-4">
-                    <div class="w3-display-container">
-                         <h2> &#160 Jonathan Gong</h2>
-                    </div>
-                </div>
-                <div class="w3-white w3-text-grey w3-card-4">
-                    <div class="w3-display-container">
-                        <img src="imgs/png-transparent-eromanga-sensei-lg-lancet-japanese-destroyer-sagiri-desktop-anime-others-fictional-character-girl-mobile-phones-removebg-preview.png" style="width:100%">
-                    </div>
-                    <div class="w3-container">
-                        <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Canada</p>
-                        <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><a href="mailto:jonathangong2005@gmail.com">jonathangong2005@gmail.com</a></p>
-                        <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+1-778-957-8081</p>
-                        <hr>
-                        <!-- Additional sections can be added here -->
-                    </div>
-                </div>
-                <br>
-                <div class="w3-white w3-text-black w3-card-4">
-                    <div class="w3-display-container">
-                         <h2> &#160 Education</h2>
-                    </div>
-                </div>
-                <div class="w3-white w3-text-grey w3-card-4">
-                    <div class="w3-container">
-                        <p> SAT: 1560 (English = 760, Math = 800)</p>
-                        <p> AP Scores: AP Calc BC (AB subscore: 5) : 5, AP Computer Science A: 5, AP Microeconomics: 5</p>
-                        <hr>
-                        <!-- Additional sections can be added here -->
-                    </div>
-                </div>
-                <br>
-            </div>
-            <!-- End Left Column -->
-
-            <!-- Right Column -->
-            <div class="w3-twothird">
-                <!-- AI Research Section -->
-                <div class="w3-container w3-card w3-white w3-margin-bottom">
-                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-laptop fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>AI Research</h2>
-                    <div class="w3-container">
-                        <h5 class="w3-opacity"><b>A Multi-Output Network with U-Net Enhanced Class Activation Map and Robust Classification Performance for Medical Imaging Analysis</b></h5>
-                        <ul>
-                            <li>A key collaborator in this research paper.</li>
-                            <li>Using a novel CNN based architecture for robust medical imaging diagnosis with CAM visualization.</li>
-                            <li>The paper has received media coverage by <a href="https://doi.org/10.33548/SCIENTIA849">Scientia.</a></li>
-                            <li>The paper has been accepted in Discover Artificial Intelligence.</li>
-                        </ul>
-                        <hr>
-                        <h5 class="w3-opacity"><b>Robust Convolutional Vision Transformer Hybrid for Multi-Depth Magnification Pigmented Skin Lesions Diagnosis</b></h5>
-                        <ul>
-                            <li>First author.</li>
-                            <li>Undergoing and writing a research paper utilizing a novel architecture combining CNNs and ViTs to diagnose skin diseases.</li>
-                        </ul>
-                        <hr>
-                    </div>
-                </div>
-                <!-- Awards Section -->
-                <div class="w3-container w3-card w3-white w3-margin-bottom">
-                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-trophy fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Awards</h2>
-                    <div class="w3-container">
-                        <ul>
-                            <li>AIME Qualifier Grade 11</li>
-                            <li>High School Mathematical Contest In Modeling Finalist (HiMCM) 2022 Grade 11</li>
-                            <li>CWSF Silver Medalist Grade 11</li>
-                            <li>Level 8 RCM Piano and Theory</li>
-                            <li>COMC Performance with Distinction Grade 11</li>
-                            <li>CSMC School Champion
-                            <li>Hypatia School Champion
-                            <li>Math Challengers Finalist 2022
-                            <li>Pascal and Cayley School champion
-                            <li>CCC Distinction
-                        </ul>
-                        <hr>
-                    </div>
-                </div>
-                <!-- Leadership Section -->
-                <div class="w3-container w3-card w3-white w3-margin-bottom">
-                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-thumbs-up fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>LEADERSHIP</h2>
-                    <div class="w3-container">
-                        <ul>
-                            <li>Founder and Leader, AI Club</li>
-                            <li>Mercy Children Society Charity Fundraiser Organizer</li>
-                            <li>Leader, Math Club</li>
-                            <li>Co-Leader, Chess Club</li>
-                        </ul>
-                        <hr>
-                    </div>
-                </div>
-                <!-- Work Section -->
-                <div class="w3-container w3-card w3-white w3-margin-bottom">
-                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-book fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>WORK/VOLUNTEERING</h2>
-                    <div class="w3-container">
-                        <ul>
-                            <li>Volleyball Scorekeeper</li>
-                            <li>Kappa Work</li>
-                            <li>U-Top Coding Tutor</li>
-                            <li>School Math Tutor</li>
-                        </ul>
-                        <hr>
-                    </div>
-                </div>
-                <!-- Sports Section -->
-                <div class="w3-container w3-card w3-white w3-margin-bottom">
-                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-bomb fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>ATHLETIC ACHIEVEMENT</h2>
-                    <div class="w3-container">
-                        <h5 class="w3-opacity"><b>Southridge Golf Team</b></h5>
-                            <ul>
-                                <li>Won the B.C provincial single A championships shooting 77, 75 (2023)</li>
-                                <li>Won the South Frazer regional championships shooting 82 (2023)</li>
-                                <li>Won the South Frazer regional championships shooting 78 (2022)</li>
-                                <li>Chosen to be a team member of the school golf team and participated in the regional championship and provincial double A championship as a player who shot an 82, 74 (2022)</li>
-                            </ul>
-                            <hr>
-                            <h5 class="w3-opacity"><b>Independent golf</b></h5>
-                            <ul>
-                                <li>2022 Jul 7-8 MJT Nicola Wealth Classic at Okanagan Golf Club shot 78</li>
-                                <li>2022 Jul 4-5 CJGA Faldo Hurricane Series Qualifier at Newlands shot 79</li>
-                            </ul>
-                            <hr>
-                            <h5 class="w3-opacity"><b>Southridge Soccer Team</b></h5>
-                            <ul>
-                                <li>Chosen to be a team member on the soccer team as a forward</li>
-                                <li>Led the Southridge Junior team (grades 9-10) in the number of goals</li>
-                                <li>The school team received third place in the ISA B.C league in 2020</li>
-                            </ul>
-                            <hr>
-                            <h5 class="w3-opacity"><b>Club Soccer Team</b></h5>
-                            <ul>
-                                <li>Player as the main striker for a Coastal FC team that was crowned as South Fraser Regional Soccer Champions</li>
-                                <li>Received award for Youth Team of the Year U11-U18 2020</li>
-                            </ul>
-                            <hr>
-                    </div>
+<body>
+    <div class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown()">Menu</a>
+        <div class="dropdown-content" id="myDropdown">
+            <a href="./index.html">Home</a>
+            <a href="./resume.html">Resume</a>
+            <div class="nested-dropdown">
+                <a href="javascript:void(0)">Projects</a>
+                <div class="nested-content">
+                    <a href="./mnist.html">Simple Inference</a>
                 </div>
             </div>
-            <!-- End Right Column -->
         </div>
-        <!-- End Grid -->
     </div>
-    <!-- End Page Container -->
 
-    <footer class="w3-container w3-teal w3-center w3-margin-top">
-        <p>Find me on social media.</p>
-        Github: <a href="https://github.com/jogong2718">https://github.com/jogong2718</a>
-        <br>
-        Instagram: <a href="https://www.instagram.com/official_jiggly_jonny/">https://www.instagram.com/official_jiggly_jonny</a>
-        <br>
-    </footer>
-
+    <div class="container">
+        <img src="imgs/png-transparent-eromanga-sensei-lg-lancet-japanese-destroyer-sagiri-desktop-anime-others-fictional-character-girl-mobile-phones-removebg-preview.png" alt="Jonathan Gong's Profile Photo" class="profile-image">
+        <div class="bio">
+            <h1>Jonathan Gong</h1>
+            <p>
+                I am driven and motivated to understand the material and do well in my studies. As a student, I am always eager to learn and acquire new knowledge. I am actively engaged in my classes, participating in class discussions and completing homework assignments to the best of my abilities. I am also curious and enjoy engaging in independent research and studying beyond what is required for class. Willing to invest time and effort into my education as I know it will lead to a better future for me.
+            </p>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
-
 </html>

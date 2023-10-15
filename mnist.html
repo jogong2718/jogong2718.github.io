@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>TF.js Inference with Model Upload</title>
+</head>
+<body>
+    <!-- Model Upload Section -->
+    <input type="file" id="modelUpload" multiple onchange="loadUploadedModel()" />
+    <br><br>
+
+    <!-- Inference Section -->
+    <input id="dataInput" type="text" placeholder="Enter data">
+    <button onclick="getPrediction()">Predict</button>
+    <p id="result">Result: </p>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script>
+        let model;
+
+        async function loadUploadedModel() {
+            const uploadedFiles = document.getElementById('modelUpload').files;
+            if (uploadedFiles.length > 0) {
+                // Assuming the first file is the model.json file
+                const modelJson = await uploadedFiles[0].text();
+                
+                // Load the model using tfjs
+                model = await tf.loadLayersModel(tf.io.browserFiles([uploadedFiles[0], ...Array.from(uploadedFiles).slice(1)]));
+                alert("Model loaded successfully!");
+            }
+        }
+
+        async function getPrediction() {
+            if (!model) {
+                alert("Please upload a model first.");
+                return;
+            }
+
+            let dataInput = parseFloat(document.getElementById("dataInput").value);
+            const inputData = tf.tensor([dataInput]);
+            const prediction = model.predict(inputData);
+            
+            document.getElementById("result").innerText = "Result: " + prediction.dataSync()[0];
+        }
+    </script>
+
+    <font size = +100>!!! NOT READY YET !!! PAGE UNDER PROGRESS!!!</font>
+</body>
+</html>
