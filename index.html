@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan Gong's Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-image: url('imgs/Screenshot 2023-06-28 at 11.03.47 PM.png'); */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            width: 70%;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .profile-image {
+            width: 150px;
+            border-radius: 50%;
+        }
+        .bio {
+            flex: 1;
+        }
+        /* Dropdown styling */
+        /* .dropdown {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0,0,0,0.8);
+            min-width: 160px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: rgba(255,255,255,0.2);
+        } */
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown()">Menu</a>
+        <div class="dropdown-content" id="myDropdown">
+            <a href="./index.html">Home</a>
+            <!-- <a href="./resume.html">Resume</a> -->
+            <div class="nested-dropdown">
+                <a href="javascript:void(0)">Projects</a>
+                <div class="nested-content">
+                    <a href="https://github.com/jogong2718/COVID-19-Radiography-Models">Medical Image Research</a>
+                    <a href="https://monkeypox-h0h3a7dqcreaerd4.canadacentral-01.azurewebsites.net/static/index.html">Mpox Inference</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="bio">
+            <h1>Jonathan Gong</h1>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
