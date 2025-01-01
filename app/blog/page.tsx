@@ -14,13 +14,13 @@ const BlogPage = () => {
         />
       </Head>
       <main className="flex flex-col min-h-screen overflow-y-auto pb-24">
-        <section className="bg-white dark:bg-transparent">
+        <section className="bg-transparent">
           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
             <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-              <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-white">
                 My Blog
               </h2>
-              <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+              <p className="font-light sm:text-xl text-gray-400">
                 Read my latest blog posts, I hope to have some collabs too ;). I
                 write about anything tech and my life!
               </p>

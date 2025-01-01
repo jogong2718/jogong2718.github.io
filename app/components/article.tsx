@@ -12,9 +12,9 @@ interface Props {
 
 const Article = ({ date, title, summary, link }: Props) => {
   return (
-    <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <article className="p-6  rounded-lg border  shadow-md bg-gray-800 border-gray-700">
       <div className="flex justify-between items-center mb-5 text-gray-500">
-        <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+        <span className="text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded bg-primary-200 text-primary-800">
           <svg
             className="mr-1 w-3 h-3"
             fill="currentColor"
@@ -32,12 +32,10 @@ const Article = ({ date, title, summary, link }: Props) => {
         </span>
         <span className="text-sm">{date}</span>
       </div>
-      <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <h2 className="mb-2 text-2xl font-bold tracking-tight text-white">
         <a href="#"> {title}</a>
       </h2>
-      <p className="mb-5 font-light text-gray-500 dark:text-gray-400">
-        {summary}
-      </p>
+      <p className="mb-5 font-light text-gray-400">{summary}</p>
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <Image
@@ -47,11 +45,11 @@ const Article = ({ date, title, summary, link }: Props) => {
             width={28}
             height={28}
           />
-          <span className="font-medium dark:text-white">Jonathan Gong</span>
+          <span className="font-medium text-white">Jonathan Gong</span>
         </div>
         <Link
           href={`/blog/${link}`}
-          className="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline"
+          className="inline-flex items-center font-medium text-primary-500 hover:underline"
         >
           Read more
           <svg
