@@ -6,7 +6,7 @@ import food1 from "../../../public/IMG_0164.png";
 import food2 from "../../../public/IMG_0166.png";
 import food3 from "../../../public/IMG_0213.png";
 import food4 from "../../../public/IMG_0216.png";
-import niagra from "../../../public/IMG_0243.png";
+import niagra from "../../../public/IMG_0383.png";
 
 const page = () => {
   return (
@@ -120,7 +120,16 @@ const page = () => {
             <h3>Computer Science</h3>
             <p>
               The day in my life as a CS student has changed quite drasticly
-              since I've started uni until now.
+              since I&apos;ve started uni until now. I think the weather of
+              Waterloo played a big part in it as well. I remember the first
+              weeks of uni, I was going to the library study after class, and
+              always had time to do fun things like go downtown on the weekends.
+              But as the weather got colder, I found myself spending more and
+              more time in my dorm at my desk studying.
+            </p>
+            <p>
+              The major in of itself is quite interesting, but I have mixed
+              reviews about it.
             </p>
 
             <h2>To Be Cont...</h2>
