@@ -7,6 +7,7 @@ import Output from "./components/output";
 import Description from "./components/description";
 import TheLink from "./components/theLink";
 import { useState, useEffect } from "react";
+import Head from "next/head";
 
 export default function Home() {
   const [isClicked, setIsClicked] = useState(false);
@@ -50,48 +51,54 @@ export default function Home() {
   }, [toggleStates]);
 
   return (
-    <main className="flex flex-col min-h-screen overflow-y-auto pb-24">
-      <div className="flex flex-col items-center px-4 ">
-        <InputNode onClick={handleClick} isClicked={isClicked} />
-        <HiddenLayer
-          isInputClicked={isClicked}
-          ANode1={
-            <ANode
-              onClick={() => handleToggle("toggle1")}
-              checked={toggleStates.toggle1}
-            />
-          }
-          ANode2={
-            <ANode
-              onClick={() => handleToggle("toggle2")}
-              checked={toggleStates.toggle2}
-            />
-          }
-          ANode3={
-            <ANode
-              onClick={() => handleToggle("toggle3")}
-              checked={toggleStates.toggle3}
-            />
-          }
+    <>
+      <Head>
+        <title>Jonathan Gong Website</title>
+        <meta
+          name="description"
+          content="Jonathan, Gong, Jonathan Gong, Website, Jonathan Gong's website"
         />
-        {/* <Link href="/blog">Blog</Link>
-        <Link href="/projects">Projects</Link>
-        <Link href="/Jonathan_Resume-6.pdf">Resume</Link> */}
-      </div>
-      <div className="flex flex-col justify-center items-center pt-12 px-4 sm:px-6 md:px-8">
-        <Description NodeClicked={output} />
-      </div>
-      <div className="flex flex-col justify-center items-center pt-12 pb-2 w-full">
-        <Output NodeClicked={output} />
-      </div>
+      </Head>
+      <main className="flex flex-col min-h-screen overflow-y-auto pb-24">
+        <div className="flex flex-col items-center px-4 ">
+          <InputNode onClick={handleClick} isClicked={isClicked} />
+          <HiddenLayer
+            isInputClicked={isClicked}
+            ANode1={
+              <ANode
+                onClick={() => handleToggle("toggle1")}
+                checked={toggleStates.toggle1}
+              />
+            }
+            ANode2={
+              <ANode
+                onClick={() => handleToggle("toggle2")}
+                checked={toggleStates.toggle2}
+              />
+            }
+            ANode3={
+              <ANode
+                onClick={() => handleToggle("toggle3")}
+                checked={toggleStates.toggle3}
+              />
+            }
+          />
+        </div>
+        <div className="flex flex-col justify-center items-center pt-12 px-4 sm:px-6 md:px-8">
+          <Description NodeClicked={output} />
+        </div>
+        <div className="flex flex-col justify-center items-center pt-12 pb-2 w-full">
+          <Output NodeClicked={output} />
+        </div>
 
-      <div className="flex flex-col justify-center items-center pt-12 pb-20 w-full">
-        <TheLink link={output} />
-      </div>
+        <div className="flex flex-col justify-center items-center pt-12 pb-20 w-full">
+          <TheLink link={output} />
+        </div>
 
-      <div className="fixed bottom-0 w-full">
-        <Footer />
-      </div>
-    </main>
+        <div className="fixed bottom-0 w-full">
+          <Footer />
+        </div>
+      </main>
+    </>
   );
 }
