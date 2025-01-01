@@ -98,7 +98,7 @@ const output = ({ NodeClicked }: Props) => {
               <div className="bg-transparent p-2 mt-1">
                 <div className="w-max">
                   <div className="animate-typing overflow-hidden whitespace-nowrap">
-                    |██████████████| Resume downloaded!
+                    |██████████| Experience downloaded!
                   </div>
                 </div>
               </div>

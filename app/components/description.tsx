@@ -19,7 +19,7 @@ const Description = ({ NodeClicked }: Props) => {
       ) : null}
       {NodeClicked === 3 ? (
         <div className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-xl sm:text-4xl text-white font-bold bg-transparent">
-          You found my Resume!
+          You found my Experience!
         </div>
       ) : null}
     </div>

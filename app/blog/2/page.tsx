@@ -6,6 +6,7 @@ import food1 from "../../../public/IMG_0164.png";
 import food2 from "../../../public/IMG_0166.png";
 import food3 from "../../../public/IMG_0213.png";
 import food4 from "../../../public/IMG_0216.png";
+import niagra from "../../../public/IMG_0243.png";
 
 const page = () => {
   return (
@@ -106,8 +107,22 @@ const page = () => {
               quickly, and before you feel like you&apos;re settled in into uni,
               you&apos;re already writing your first midterm. Yet UWaterloo and
               I think other universities give a week without classes before
-              midterms to &quot;study&quot;.
+              midterms to &quot;study&quot; (reading week). Being studious in
+              these times is important, but so is taking breaks. You might be
+              like me, and lose sense of what I am studying for. A friend of
+              mine asked me to go on a day trip to niagara falls and I was
+              hesitant at first, but I went. A relaxing trip was all I needed to
+              rethink my priorities. Realising that the age that I am at is a
+              time I will never get back, and that I should make the most of it.
             </p>
+            <Image src={niagra} alt="" width={700} height={500} />
+
+            <h3>Computer Science</h3>
+            <p>
+              The day in my life as a CS student has changed quite drasticly
+              since I've started uni until now.
+            </p>
+
             <h2>To Be Cont...</h2>
             {/* <p>
               It also includes a JavaScript file that enables interactive
