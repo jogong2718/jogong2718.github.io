@@ -1,7 +1,5 @@
 # Personal Website
 
-A personal website built with Next.js and TypeScript. It features a blog, project page, personal resume, and various interactive components.
-
 ## Getting Started
 
 1. Clone this repository.
