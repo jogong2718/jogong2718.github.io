@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Jonathan Gong's Website",
   description: "Personal Website",
+  verification: {
+    google: "6H2VmUQh_Soz3ztvZr6dWmeaWJqJeHk03uwnv9vB0vc",
+  },
 };
 
 export default function RootLayout({
