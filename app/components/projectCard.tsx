@@ -3,7 +3,7 @@ import React from "react";
 interface Props {
   forWho: string;
   title: string;
-  summary: string;
+  summary: React.ReactElement;
   link: string;
 }
 
@@ -14,7 +14,7 @@ const ProjectCard = ({ forWho, title, summary, link }: Props) => {
         {forWho}
       </span>
       <h3 className="text-2xl font-bold leading-tight text-white">{title}</h3>
-      <p className="text-lg font-normal text-gray-400">{summary}</p>
+      <div className="text-lg font-normal text-gray-400">{summary}</div>
       <a
         href={link}
         title=""
