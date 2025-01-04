@@ -44,8 +44,8 @@ You can configure environment variables by creating a .env file at the project r
 
    - Showcases various projects, with short descriptions and links to repositories or live demos.
 
-4. Resume Section:
-   - Downloadable resume (PDF).
+4. Experience Section:
+   - Shows recent and notable experience.
 
 ## Running Tests
 
