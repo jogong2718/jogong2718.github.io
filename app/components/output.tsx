@@ -22,7 +22,15 @@ const output = ({ NodeClicked }: Props) => {
               <div className="mr-2">&gt;</div>
               <div className="w-max">
                 <div className="animate-typing overflow-hidden whitespace-nowrap">
-                  np.argmax(np.array([1, 0, 0]))
+                  choices = np.array([1, 0, 0])
+                </div>
+              </div>
+            </div>
+            <div className="flex">
+              <div className="mr-2">&gt;</div>
+              <div className="w-max">
+                <div className="animate-typing overflow-hidden whitespace-nowrap">
+                  download(np.argmax(choices))
                 </div>
               </div>
             </div>
@@ -32,7 +40,7 @@ const output = ({ NodeClicked }: Props) => {
               <div className="bg-transparent p-2 mt-1">
                 <div className="w-max">
                   <div className="animate-typing overflow-hidden whitespace-nowrap">
-                    |████████████████| Blog downloaded!
+                    |███████████████| Blog downloaded!
                   </div>
                 </div>
               </div>
@@ -55,7 +63,15 @@ const output = ({ NodeClicked }: Props) => {
               <div className="mr-2">&gt;</div>
               <div className="w-max">
                 <div className="animate-typing overflow-hidden whitespace-nowrap">
-                  np.argmax(np.array([0, 1, 0]))
+                  choices = np.array([0, 1, 0])
+                </div>
+              </div>
+            </div>
+            <div className="flex">
+              <div className="mr-2">&gt;</div>
+              <div className="w-max">
+                <div className="animate-typing overflow-hidden whitespace-nowrap">
+                  download(np.argmax(choices))
                 </div>
               </div>
             </div>
@@ -65,7 +81,7 @@ const output = ({ NodeClicked }: Props) => {
               <div className="bg-transparent p-2 mt-1">
                 <div className="w-max">
                   <div className="animate-typing overflow-hidden whitespace-nowrap">
-                    |████████████| Projects downloaded!
+                    |███████████| Projects downloaded!
                   </div>
                 </div>
               </div>
@@ -88,7 +104,15 @@ const output = ({ NodeClicked }: Props) => {
               <div className="mr-2">&gt;</div>
               <div className="w-max">
                 <div className="animate-typing overflow-hidden whitespace-nowrap">
-                  np.argmax(np.array([0, 0, 1]))
+                  choices = np.array([0, 0, 1])
+                </div>
+              </div>
+            </div>
+            <div className="flex">
+              <div className="mr-2">&gt;</div>
+              <div className="w-max">
+                <div className="animate-typing overflow-hidden whitespace-nowrap">
+                  download(np.argmax(choices))
                 </div>
               </div>
             </div>
@@ -98,7 +122,7 @@ const output = ({ NodeClicked }: Props) => {
               <div className="bg-transparent p-2 mt-1">
                 <div className="w-max">
                   <div className="animate-typing overflow-hidden whitespace-nowrap">
-                    |██████████| Experience downloaded!
+                    |█████████| Experience downloaded!
                   </div>
                 </div>
               </div>

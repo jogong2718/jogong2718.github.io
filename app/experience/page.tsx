@@ -28,7 +28,7 @@ const page = () => {
             <div className="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-x-20 gap-y-12 sm:grid-cols-1 lg:grid-cols-1">
               <ExperienceCard
                 forWho="WAT.ai, Gluroo"
-                title="Causal Modeling and Time Series Representation Learning for Diabetes Management"
+                title="AI Researcher, ML Engineer"
                 summary={
                   <div className="experience-card p-1 bg-transparent rounded-lg shadow-md text-left">
                     <p className="mt-2 text-gray-300">
