@@ -18,7 +18,6 @@
 
 - `app/` — Main application components and pages.
 - `public/` — Static assets/images.
-- `...existing code...`
 
 ## Environment Setup
 
@@ -47,13 +46,6 @@ You can configure environment variables by creating a .env file at the project r
 4. Experience Section:
    - Shows recent and notable experience.
 
-## Running Tests
-
-If you have tests configured (e.g., Jest or Cypress):
-
-1. Run `npm test` or `yarn test` to execute tests.
-2. Check coverage if needed (once configured) with `npm run coverage`.
-
 ## Build & Deploy
 
 - Run `npm run build` (or `yarn build`) to compile.
@@ -63,6 +55,7 @@ If you have tests configured (e.g., Jest or Cypress):
 
 You can deploy this site via:
 
+- Github Pages: Configure using Github Actions using the Next.js template
 - Vercel: Link your GitHub repo in Vercel.
 - Netlify: Configure build settings (build command: `npm run build`, publish directory: `.next`).
 - Docker/Custom server: Build the production bundle locally, then serve with `npm run start`.
