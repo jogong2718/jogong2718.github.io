@@ -84,6 +84,19 @@ const page = () => {
                 }
                 link="https://monkeypox-h0h3a7dqcreaerd4.canadacentral-01.azurewebsites.net/"
               />
+              <ProjectCard
+                forWho="AI Implemention, Web Dev"
+                title="SoccerMetrics - Won GeeseHacks"
+                summary={
+                  <span>
+                    The platform provides actionable biomechanical insights by analyzing
+                    3D pose and tracking ball movement. Using MediaPipe's GHUM 3D model
+                    and Ultralytics YOLOv8, it calculates joint angles and other metrics,
+                    enabling comparisons to optimal standards.
+                  </span>
+                }
+                link="https://github.com/jogong2718/SoccerMetrics"
+              />
             </div>
           </div>
         </section>
