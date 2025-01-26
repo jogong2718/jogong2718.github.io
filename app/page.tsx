@@ -62,6 +62,7 @@ export default function Home() {
           name="google-site-verification"
           content="6H2VmUQh_Soz3ztvZr6dWmeaWJqJeHk03uwnv9vB0vc"
         />
+        <link rel="icon" type="image/x-icon" href={"/favicon.ico"} />
       </Head>
       <main className="flex flex-col min-h-screen overflow-y-auto pb-24">
         <div className="flex flex-col items-center px-4 ">
