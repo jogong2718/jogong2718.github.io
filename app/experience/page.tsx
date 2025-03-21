@@ -27,8 +27,66 @@ const page = () => {
 
             <div className="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-x-20 gap-y-12 sm:grid-cols-1 lg:grid-cols-1">
               <ExperienceCard
+                forWho="Aview International"
+                title="FullStack and ML Engineer"
+                summary={
+                  <div className="experience-card p-1 bg-transparent rounded-lg shadow-md text-left">
+                    <p className="mt-2 text-gray-300">
+                      Aview International is a startup that provides a platform
+                      to transform how you create, localize, and distribute
+                      content—all with the power of their AI toolkit.
+                    </p>
+                    <ul className="mt-4 pl-10 list-disc list-inside text-gray-300">
+                      <li>
+                        Developed a <strong>React</strong> web application for
+                        content creators to manage their projects and connect
+                        with clients;
+                      </li>
+                      <li>
+                        Implemented a <strong>Node.js</strong> backend with
+                        Express and MongoDB to store user data and project
+                        information;
+                      </li>
+                      <li>
+                        Integrated <strong>Google Cloud Platform</strong> for
+                        cloud storage and hosting;
+                      </li>
+                      <li>
+                        Developed a <strong>Audio model</strong> to translate
+                        and automatically generate subtitles and dubbing for
+                        videos;
+                      </li>
+                    </ul>
+                  </div>
+                }
+                link1="https://www.aviewint.com/"
+                name1="Aview International"
+              />
+              <ExperienceCard
+                forWho="SciUGo"
+                title="CV & Data Engineer"
+                summary={
+                  <div className="experience-card p-1 bg-transparent rounded-lg shadow-md text-left">
+                    <p className="mt-2 text-gray-300">
+                      SciUGo helps resarchers refine and create their western
+                      blot and gel figures. I worked on the CV model for the
+                      platform.
+                    </p>
+                    <ul className="mt-4 pl-10 list-disc list-inside text-gray-300">
+                      <li>
+                        Developed a SIFT derivative and novel metric to compare
+                        and match protein bands in western blot images,
+                        achieving a<strong> 98% accuracy</strong>;
+                      </li>
+                    </ul>
+                  </div>
+                }
+                link1="https://sciugo.com/"
+                name1="SciUGo"
+              />
+              <ExperienceCard
                 forWho="WAT.ai, Gluroo"
-                title="AI Researcher, ML Engineer"
+                title="AI Director, ML Engineer"
                 summary={
                   <div className="experience-card p-1 bg-transparent rounded-lg shadow-md text-left">
                     <p className="mt-2 text-gray-300">
@@ -40,23 +98,48 @@ const page = () => {
                     </p>
                     <ul className="mt-4 pl-10 list-disc list-inside text-gray-300">
                       <li>
-                        <strong>Designed</strong> a robust <em>sktime</em>{" "}
-                        training pipeline with hyperparameter tuning, dataset
-                        selection, train-test splitting, and integration of
-                        models (ClaSPSegmentation, KNN, HMM variations).
+                        Designed a{" "}
+                        <strong>robust sktime training pipeline</strong> with
+                        hyperparameter tuning, dataset selection, train-test
+                        splitting, and integration of models (
+                        <strong>
+                          ClaSPSegmentation, KNN, and HMM variations
+                        </strong>
+                        ). Managed model fitting, prediction, error analysis,
+                        and ensured reliability with the{" "}
+                        <strong>unittest framework</strong>.
                       </li>
                       <li>
-                        <strong>Implemented</strong> the <em>GMMHMM</em> model
-                        for blood glucose data, enhancing blood glucose level
-                        outcomes for PWD with a MAE of <strong>0.02</strong> and{" "}
-                        <strong>93% accuracy</strong>.
+                        Implemented a <strong>GMMHMM</strong> for blood glucose
+                        data to predict and improve short-term prandial (during
+                        meal-time) and postprandial blood glucose level outcomes
+                        for PWD (<strong>MAE of 0.02, accuracy of 93%</strong>);
+                      </li>
+                      <li>
+                        Developed novel <strong>causal ML models</strong>{" "}
+                        performing quasi-experiments to predict and interpolate
+                        future possible blood glucose trends, improving the time
+                        in range of PWD by <strong>60%</strong>;
+                      </li>
+                      <li>
+                        Directed & led workshops, project showcases, and
+                        long-term hackathons for{" "}
+                        <strong>700+ organization members</strong>;
+                      </li>
+                      <li>
+                        Created videos on AI models (ViTs, HMMs, DDPG, etc.) and
+                        new technologies using the <strong>Manim Engine</strong>
+                        .
                       </li>
                     </ul>
                   </div>
                 }
-                link1="https://github.com/RobotPsychologist/bg_control"
+                link1="https://github.com/Blood-Glucose-Control"
                 link2="https://watai.ca/"
                 link3="https://gluroo.com/"
+                name1="Software"
+                name2="WAT.ai"
+                name3="Gluroo"
               />
             </div>
           </div>

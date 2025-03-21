@@ -4,9 +4,12 @@ interface Props {
   forWho: string;
   title: string;
   summary: React.ReactElement;
-  link1: string;
-  link2: string;
-  link3: string;
+  link1?: string;
+  link2?: string;
+  link3?: string;
+  name1?: string;
+  name2?: string;
+  name3?: string;
 }
 
 const ExperienceCard = ({
@@ -16,6 +19,9 @@ const ExperienceCard = ({
   link1,
   link2,
   link3,
+  name1,
+  name2,
+  name3,
 }: Props) => {
   return (
     <div className="space-y-4">
@@ -31,7 +37,7 @@ const ExperienceCard = ({
           className="text-white  justify-center  inline-flex items-center  focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary-600 hover:bg-primary-700 focus:ring-primary-800"
           role="button"
         >
-          Software
+          {name1}
           <svg
             aria-hidden="true"
             className="w-5 h-5 ml-2 -mr-1"
@@ -46,48 +52,52 @@ const ExperienceCard = ({
             />
           </svg>
         </a>
-        <a
-          href={link2}
-          title=""
-          className="text-white  justify-center  inline-flex items-center  focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary-600 hover:bg-primary-700 focus:ring-primary-800"
-          role="button"
-        >
-          WAT.ai
-          <svg
-            aria-hidden="true"
-            className="w-5 h-5 ml-2 -mr-1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+        {link2 && (
+          <a
+            href={link2}
+            title=""
+            className="text-white  justify-center  inline-flex items-center  focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary-600 hover:bg-primary-700 focus:ring-primary-800"
+            role="button"
           >
-            <path
-              fillRule="evenodd"
-              d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </a>
-        <a
-          href={link3}
-          title=""
-          className="text-white  justify-center  inline-flex items-center  focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary-600 hover:bg-primary-700 focus:ring-primary-800"
-          role="button"
-        >
-          Gluroo
-          <svg
-            aria-hidden="true"
-            className="w-5 h-5 ml-2 -mr-1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+            {name2}
+            <svg
+              aria-hidden="true"
+              className="w-5 h-5 ml-2 -mr-1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </a>
+        )}
+        {link3 && (
+          <a
+            href={link3}
+            title=""
+            className="text-white  justify-center  inline-flex items-center  focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary-600 hover:bg-primary-700 focus:ring-primary-800"
+            role="button"
           >
-            <path
-              fillRule="evenodd"
-              d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </a>
+            {name3}
+            <svg
+              aria-hidden="true"
+              className="w-5 h-5 ml-2 -mr-1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </a>
+        )}
       </div>
     </div>
   );

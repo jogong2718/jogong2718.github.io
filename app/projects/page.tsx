@@ -45,7 +45,7 @@ const page = () => {
                 link="https://deliriumcontrol.vercel.app"
               />
               <ProjectCard
-                forWho="AI Implemention, Web Dev"
+                forWho="AI Implemention, Web Dev, 2025"
                 title="SoccerMetrics - Won GeeseHacks"
                 summary={
                   <span>
