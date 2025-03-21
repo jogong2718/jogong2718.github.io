@@ -26,23 +26,38 @@ const page = () => {
                 learn new things!
               </p>
             </div>
-            <ProjectCard
-              forWho="Velocity Incubator, App Dev, 2025"
-              title="United Mobility & United Helthcare - 2x Finalist 1x Winner"
-              summary={
-                <span>
-                  United Healthcare (Finalist Top 8) is a hospital monitoring
-                  system that analyzes patient vitals, environment, and behavior
-                  in real time to predict health risks and support proactive
-                  care. United Mobility (Winner $2500) is a decentralized
-                  scooter-sharing network that transforms idle, privately-owned
-                  micromobility vehicles into a community-powered transportation
-                  system by partnering with local businesses
-                </span>
-              }
-              link="https://deliriumcontrol.vercel.app"
-            />
             <div className="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-x-20 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              <ProjectCard
+                forWho="Velocity Incubator, App Dev, 2025"
+                title="United Mobility & Healthcare - 2x Finalist 1x Winner"
+                summary={
+                  <span>
+                    United Healthcare (Finalist Top 8) is a hospital monitoring
+                    system that analyzes patient vitals, environment, and
+                    behavior in real time to predict health risks and support
+                    proactive care. United Mobility (Winner $2500) is a
+                    decentralized scooter-sharing network that transforms idle,
+                    privately-owned micromobility vehicles into a
+                    community-powered transportation system by partnering with
+                    local businesses
+                  </span>
+                }
+                link="https://deliriumcontrol.vercel.app"
+              />
+              <ProjectCard
+                forWho="AI Implemention, Web Dev"
+                title="SoccerMetrics - Won GeeseHacks"
+                summary={
+                  <span>
+                    The platform provides actionable biomechanical insights by
+                    analyzing 3D pose and tracking ball movement. Using
+                    MediaPipe's GHUM 3D model and Ultralytics YOLOv8, it
+                    calculates joint angles and other metrics, enabling
+                    comparisons to optimal standards.
+                  </span>
+                }
+                link="https://github.com/jogong2718/SoccerMetrics"
+              />
               <ProjectCard
                 forWho="UWaterloo CSC, Web Dev, 2024"
                 title="WatClub"
