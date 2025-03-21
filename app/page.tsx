@@ -64,43 +64,45 @@ export default function Home() {
         />
         <link rel="icon" type="image/x-icon" href={"/favicon.ico"} />
       </Head>
-      <main className="flex flex-col min-h-screen overflow-y-auto pb-24">
-        <div className="flex flex-col items-center px-4 ">
-          <InputNode onClick={handleClick} isClicked={isClicked} />
-          <HiddenLayer
-            isInputClicked={isClicked}
-            ANode1={
-              <ANode
-                onClick={() => handleToggle("toggle1")}
-                checked={toggleStates.toggle1}
-              />
-            }
-            ANode2={
-              <ANode
-                onClick={() => handleToggle("toggle2")}
-                checked={toggleStates.toggle2}
-              />
-            }
-            ANode3={
-              <ANode
-                onClick={() => handleToggle("toggle3")}
-                checked={toggleStates.toggle3}
-              />
-            }
-          />
-        </div>
-        <div className="flex flex-col justify-center items-center pt-12 px-4 sm:px-6 md:px-8">
-          <Description NodeClicked={output} />
-        </div>
-        <div className="flex flex-col justify-center items-center pt-12 pb-2 w-full">
-          <Output NodeClicked={output} />
+      <main className="flex flex-col min-h-screen overflow-y-auto">
+        <div className="flex-grow">
+          <div className="flex flex-col items-center px-4 ">
+            <InputNode onClick={handleClick} isClicked={isClicked} />
+            <HiddenLayer
+              isInputClicked={isClicked}
+              ANode1={
+                <ANode
+                  onClick={() => handleToggle("toggle1")}
+                  checked={toggleStates.toggle1}
+                />
+              }
+              ANode2={
+                <ANode
+                  onClick={() => handleToggle("toggle2")}
+                  checked={toggleStates.toggle2}
+                />
+              }
+              ANode3={
+                <ANode
+                  onClick={() => handleToggle("toggle3")}
+                  checked={toggleStates.toggle3}
+                />
+              }
+            />
+          </div>
+          <div className="flex flex-col justify-center items-center pt-12 px-4 sm:px-6 md:px-8">
+            <Description NodeClicked={output} />
+          </div>
+          <div className="flex flex-col justify-center items-center pt-12 pb-2 w-full">
+            <Output NodeClicked={output} />
+          </div>
+
+          <div className="flex flex-col justify-center items-center pt-12 pb-20 w-full">
+            <TheLink link={output} />
+          </div>
         </div>
 
-        <div className="flex flex-col justify-center items-center pt-12 pb-20 w-full">
-          <TheLink link={output} />
-        </div>
-
-        <div className="fixed bottom-0 w-full">
+        <div className="w-full mt-auto">
           <Footer />
         </div>
       </main>
