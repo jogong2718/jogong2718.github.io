@@ -51,7 +51,7 @@ const page = () => {
                   <span>
                     The platform provides actionable biomechanical insights by
                     analyzing 3D pose and tracking ball movement. Using
-                    MediaPipe's GHUM 3D model and Ultralytics YOLOv8, it
+                    MediaPipe&apos;s GHUM 3D model and Ultralytics YOLOv8, it
                     calculates joint angles and other metrics, enabling
                     comparisons to optimal standards.
                   </span>
