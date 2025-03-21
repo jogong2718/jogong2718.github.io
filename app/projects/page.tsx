@@ -26,10 +26,25 @@ const page = () => {
                 learn new things!
               </p>
             </div>
-
+            <ProjectCard
+              forWho="Velocity Incubator, App Dev, 2025"
+              title="United Mobility & United Helthcare - 2x Finalist 1x Winner"
+              summary={
+                <span>
+                  United Healthcare (Finalist Top 8) is a hospital monitoring
+                  system that analyzes patient vitals, environment, and behavior
+                  in real time to predict health risks and support proactive
+                  care. United Mobility (Winner $2500) is a decentralized
+                  scooter-sharing network that transforms idle, privately-owned
+                  micromobility vehicles into a community-powered transportation
+                  system by partnering with local businesses
+                </span>
+              }
+              link="https://deliriumcontrol.vercel.app"
+            />
             <div className="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-x-20 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               <ProjectCard
-                forWho="UWaterloo CSC, Web Dev"
+                forWho="UWaterloo CSC, Web Dev, 2024"
                 title="WatClub"
                 summary={
                   <span>
@@ -41,20 +56,19 @@ const page = () => {
                 link="https://github.com/Brucewang15/WatClub"
               />
               <ProjectCard
-                forWho="AI Research"
-                title="Hybrid Classification Segmentation Image model"
+                forWho="AI Research, Web Dev, 2024"
+                title="Skin Lesion Diagnostic Web Application"
                 summary={
                   <span>
-                    A model that can classify and segment images at the same
-                    time with SOTA metrics. A paper was written helping me win a
-                    competition, ranking in the top 0.5% of participants, along
-                    with $11,500 in scholarships and the $1,000 cash prize.
+                    A web application that can diagnose skin lesions with SOTA
+                    metrics. A paper was written for the model explaining the
+                    architecture and the results.
                   </span>
                 }
-                link="https://github.com/jogong2718/COVID-19-Radiography-Models"
+                link="https://monkeypox-h0h3a7dqcreaerd4.canadacentral-01.azurewebsites.net/"
               />
               <ProjectCard
-                forWho="Published AI Research"
+                forWho="Published AI Research, 2024"
                 title="A multi-output network for medical imaging analysis."
                 summary={
                   <p>
@@ -73,29 +87,17 @@ const page = () => {
                 link="https://doi.org/10.1007/s44163-022-00045-1"
               />
               <ProjectCard
-                forWho="AI Research, Web Dev"
-                title="Skin Lesion Diagnostic Web Application"
+                forWho="AI Research"
+                title="Hybrid Classification Segmentation Image model, 2023"
                 summary={
                   <span>
-                    A web application that can diagnose skin lesions with SOTA
-                    metrics. A paper was written for the model explaining the
-                    architecture and the results.
+                    A model that can classify and segment images at the same
+                    time with SOTA metrics. A paper was written helping me win a
+                    competition, ranking in the top 0.5% of participants, along
+                    with $11,500 in scholarships and the $1,000 cash prize.
                   </span>
                 }
-                link="https://monkeypox-h0h3a7dqcreaerd4.canadacentral-01.azurewebsites.net/"
-              />
-              <ProjectCard
-                forWho="AI Implemention, Web Dev"
-                title="SoccerMetrics - Won GeeseHacks"
-                summary={
-                  <span>
-                    The platform provides actionable biomechanical insights by analyzing
-                    3D pose and tracking ball movement. Using MediaPipe&apos;s GHUM 3D model
-                    and Ultralytics YOLOv8, it calculates joint angles and other metrics,
-                    enabling comparisons to optimal standards.
-                  </span>
-                }
-                link="https://github.com/jogong2718/SoccerMetrics"
+                link="https://github.com/jogong2718/COVID-19-Radiography-Models"
               />
             </div>
           </div>
