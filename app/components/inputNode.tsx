@@ -27,7 +27,7 @@ const InputNode = ({ onClick, isClicked }: Props) => {
           className={`relative z-10 transition-all duration-500 ease-in-out
         ${
           isClicked
-            ? "sm:w-full h-80 sm:h-52 rounded-xl text-5xl sm:text-6xl "
+            ? "sm:w-full h-24 sm:h-28 rounded-xl text-5xl sm:text-6xl "
             : "sm:w-full h-24 sm:h-28 rounded-xl text-4xl sm:text-5xl "
         }
         px-6 py-3 
@@ -41,7 +41,7 @@ const InputNode = ({ onClick, isClicked }: Props) => {
           ) : (
             <div className="mt-1 text-center">
               <h1 className="text-4xl sm:text-5xl font-bold">Jonathan Gong</h1>
-              <p className="text-sm sm:text-base font-medium mt-2">
+              {/* <p className="text-sm sm:text-base font-medium mt-2">
                 Hello! I&apos;m <strong>Jonathan Gong</strong>, a Computer
                 Science student at the University of Waterloo with a passion for
                 software development and AI. I&apos;ve contributed to innovative
@@ -52,7 +52,7 @@ const InputNode = ({ onClick, isClicked }: Props) => {
                 building user-friendly and industry-grade applications, I&apos;m
                 committed to continuous learning and making a positive impact
                 through technology.
-              </p>
+              </p> */}
             </div>
           )}
         </button>
