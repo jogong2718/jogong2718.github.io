@@ -1,10 +1,5 @@
 "use client";
-import { JSX, useEffect, useRef, useState } from "react";
-
-interface Dimensions {
-  width: number;
-  height: number;
-}
+import { JSX, useEffect, useRef, useState, useCallback } from "react";
 
 class Node {
   x: number;
@@ -113,7 +108,7 @@ export default function NeuralNetworkBackground(): JSX.Element {
   const lastFrameTime = useRef<number>(0);
   const [isClient, setIsClient] = useState(false);
 
-  const initialize = () => {
+  const initialize = useCallback(() => {
     if (!canvasRef.current || typeof window === "undefined") return;
 
     const canvas = canvasRef.current;
@@ -150,9 +145,9 @@ export default function NeuralNetworkBackground(): JSX.Element {
     }
 
     nodesRef.current = nodes;
-  };
+  }, []);
 
-  const animate = (timestamp: number) => {
+  const animate = useCallback((timestamp: number) => {
     if (!canvasRef.current) return;
 
     const canvas = canvasRef.current;
@@ -206,7 +201,7 @@ export default function NeuralNetworkBackground(): JSX.Element {
     }
 
     animationRef.current = requestAnimationFrame(animate);
-  };
+  }, []);
 
   useEffect(() => {
     setIsClient(true);
@@ -244,7 +239,7 @@ export default function NeuralNetworkBackground(): JSX.Element {
       }
       window.removeEventListener("resize", handleResize);
     };
-  }, [animate]);
+  }, [initialize, animate]);
 
   if (!isClient) {
     return <></>;
