@@ -50,6 +50,14 @@ export default function Home() {
     }
   }, [toggleStates]);
 
+  // Add a ref to track if initial render is complete
+  const [isInitialRender, setIsInitialRender] = useState(true);
+
+  useEffect(() => {
+    // Mark initial render as complete after mount
+    setIsInitialRender(false);
+  }, []);
+
   return (
     <>
       <Head>
@@ -64,9 +72,9 @@ export default function Home() {
         />
         <link rel="icon" type="image/x-icon" href={"/favicon.ico"} />
       </Head>
-      <main className="flex flex-col min-h-screen overflow-y-auto">
+      <main className="flex flex-col min-h-screen relative z-10">
         <div className="flex-grow">
-          <div className="flex flex-col items-center px-4 ">
+          <div className="flex flex-col items-center px-4 pt-8">
             <InputNode onClick={handleClick} isClicked={isClicked} />
             <HiddenLayer
               isInputClicked={isClicked}
