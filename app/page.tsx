@@ -50,8 +50,7 @@ export default function Home() {
     }
   }, [toggleStates]);
 
-  // Add a ref to track if initial render is complete
-  const [isInitialRender, setIsInitialRender] = useState(true);
+  // Remove unused isInitialRender state that was causing ESLint errors
 
   return (
     <>

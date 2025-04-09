@@ -37,7 +37,6 @@ class Node {
     this.canvasWidth = canvasWidth;
     this.canvasHeight = canvasHeight;
 
-    // Increase initial velocity range for faster movement
     this.velocityX = Math.random() * 0.7 - 0.25;
     this.velocityY = Math.random() * 0.7 - 0.25;
     this.originalX = x;
@@ -46,9 +45,7 @@ class Node {
     this.displacement = Math.random() * 30 + 30;
 
     this.phase = Math.random() * Math.PI * 2;
-    // Increase amplitude for more pronounced movement
     this.amplitude = Math.random() * 0.6 + 0.3;
-    // Increase frequency for faster oscillation
     this.frequency = Math.random() * 0.01 + 0.004;
   }
 
@@ -79,7 +76,6 @@ class Node {
       this.velocityY -= Math.sin(angle) * 0.03;
     }
 
-    // Increase oscillation effect
     this.velocityX +=
       Math.sin(time * this.frequency + this.phase) * 0.02 * this.amplitude;
     this.velocityY +=
@@ -88,11 +84,9 @@ class Node {
     this.x += this.velocityX;
     this.y += this.velocityY;
 
-    // Reduce damping to maintain more momentum
     this.velocityX *= 1;
     this.velocityY *= 1;
 
-    // Increase max velocity
     const maxVelocity = 2.0;
     const currentVelocity = Math.sqrt(
       this.velocityX * this.velocityX + this.velocityY * this.velocityY
@@ -118,10 +112,6 @@ export default function NeuralNetworkBackground(): JSX.Element {
   const nodesRef = useRef<Node[]>([]);
   const lastFrameTime = useRef<number>(0);
   const [isClient, setIsClient] = useState(false);
-  const [dimensions, setDimensions] = useState<Dimensions>({
-    width: 0,
-    height: 0,
-  });
 
   const initialize = () => {
     if (!canvasRef.current || typeof window === "undefined") return;
@@ -135,11 +125,6 @@ export default function NeuralNetworkBackground(): JSX.Element {
 
     canvas.width = width;
     canvas.height = height;
-
-    setDimensions({
-      width,
-      height,
-    });
 
     const nodeCount = Math.min(75, Math.floor((width * height) / 30000));
     const nodes: Node[] = [];
@@ -202,8 +187,7 @@ export default function NeuralNetworkBackground(): JSX.Element {
 
         if (distSquared < connectionDistSquared) {
           const distance = Math.sqrt(distSquared);
-          // Increase base opacity by making the starting opacity higher
-          let opacity = Math.min(0.9, 1.2 - distance / connectionDistance);
+          const opacity = Math.min(0.9, 1.2 - distance / connectionDistance);
 
           const pulseSpeed = 0.5;
           const pulseAmount = 0.3;
@@ -214,9 +198,8 @@ export default function NeuralNetworkBackground(): JSX.Element {
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);
 
-          // Increase the opacity multiplier from 0.5 to 0.8
           ctx.strokeStyle = `rgba(255, 255, 255, ${pulse * 0.8})`;
-          ctx.lineWidth = Math.min(1, opacity * 1.2); // Slightly increased line width
+          ctx.lineWidth = Math.min(1, opacity * 1.2);
           ctx.stroke();
         }
       }
@@ -261,7 +244,7 @@ export default function NeuralNetworkBackground(): JSX.Element {
       }
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [animate]);
 
   if (!isClient) {
     return <></>;
