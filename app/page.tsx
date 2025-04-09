@@ -53,11 +53,6 @@ export default function Home() {
   // Add a ref to track if initial render is complete
   const [isInitialRender, setIsInitialRender] = useState(true);
 
-  useEffect(() => {
-    // Mark initial render as complete after mount
-    setIsInitialRender(false);
-  }, []);
-
   return (
     <>
       <Head>
