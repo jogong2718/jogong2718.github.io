@@ -163,7 +163,7 @@ export default function NeuralNetworkBackground(): JSX.Element {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     const nodes = nodesRef.current;
-    const connectionDistance = Math.min(canvas.width, canvas.height) / 5;
+    const connectionDistance = Math.min(canvas.width, canvas.height) / 3; // Increased from /5 to /3
 
     nodes.forEach((node) => {
       node.update();
@@ -172,8 +172,7 @@ export default function NeuralNetworkBackground(): JSX.Element {
 
     const time = Date.now() * 0.001;
     for (let i = 0; i < nodes.length; i++) {
-      const checkInterval = nodes.length > 50 ? 2 : 1;
-      for (let j = i + checkInterval; j < nodes.length; j += checkInterval) {
+      for (let j = i + 1; j < nodes.length; j++) {
         const dx = nodes[i].x - nodes[j].x;
         const dy = nodes[i].y - nodes[j].y;
 
