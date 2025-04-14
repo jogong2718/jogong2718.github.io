@@ -37,7 +37,7 @@ const page = () => {
                       content—all with the power of their AI toolkit.
                     </p>
                     <ul className="mt-4 pl-10 list-disc list-inside text-gray-300">
-                      <li>
+                      {/* <li>
                         Developed a <strong>React</strong> web application for
                         content creators to manage their projects and connect
                         with clients;
@@ -55,7 +55,8 @@ const page = () => {
                         Developed a <strong>Audio model</strong> to translate
                         and automatically generate subtitles and dubbing for
                         videos;
-                      </li>
+                      </li> */}
+                      Incoming...
                     </ul>
                   </div>
                 }
@@ -116,7 +117,7 @@ const page = () => {
                         for PWD (<strong>MAE of 0.02, accuracy of 93%</strong>);
                       </li>
                       <li>
-                        Developed novel <strong>causal ML models</strong>{" "}
+                        Developed novel ITS <strong>causal ML models</strong>{" "}
                         performing quasi-experiments to predict and interpolate
                         future possible blood glucose trends, improving the time
                         in range of PWD by <strong>60%</strong>;
