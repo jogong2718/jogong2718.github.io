@@ -32,12 +32,13 @@ class Node {
     this.canvasWidth = canvasWidth;
     this.canvasHeight = canvasHeight;
 
-    this.velocityX = Math.random() * 0.7 - 0.25;
-    this.velocityY = Math.random() * 0.7 - 0.25;
+    const screenSizeFactor = Math.sqrt(canvasWidth * canvasHeight) / 1000;
+    this.velocityX = (Math.random() * 0.7 - 0.25) * screenSizeFactor;
+    this.velocityY = (Math.random() * 0.7 - 0.25) * screenSizeFactor;
     this.originalX = x;
     this.originalY = y;
 
-    this.displacement = Math.random() * 30 + 30;
+    this.displacement = (Math.random() * 30 + 30) * screenSizeFactor;
 
     this.phase = Math.random() * Math.PI * 2;
     this.amplitude = Math.random() * 0.6 + 0.3;
@@ -46,19 +47,20 @@ class Node {
 
   update(): void {
     const time = Date.now() * 0.001;
+    const screenSizeFactor = Math.sqrt(this.canvasWidth * this.canvasHeight) / 1000;
 
     const padding = this.radius + 5;
 
     if (this.x < padding) {
-      this.velocityX += 0.1;
+      this.velocityX += 0.1 * screenSizeFactor;
     } else if (this.x > this.canvasWidth - padding) {
-      this.velocityX -= 0.1;
+      this.velocityX -= 0.1 * screenSizeFactor;
     }
 
     if (this.y < padding) {
-      this.velocityY += 0.1;
+      this.velocityY += 0.1 * screenSizeFactor;
     } else if (this.y > this.canvasHeight - padding) {
-      this.velocityY -= 0.1;
+      this.velocityY -= 0.1 * screenSizeFactor;
     }
 
     const dx = this.x - this.originalX;
@@ -67,14 +69,14 @@ class Node {
 
     if (distance > this.displacement) {
       const angle = Math.atan2(dy, dx);
-      this.velocityX -= Math.cos(angle) * 0.03;
-      this.velocityY -= Math.sin(angle) * 0.03;
+      this.velocityX -= Math.cos(angle) * 0.03 * screenSizeFactor;
+      this.velocityY -= Math.sin(angle) * 0.03 * screenSizeFactor;
     }
 
     this.velocityX +=
-      Math.sin(time * this.frequency + this.phase) * 0.02 * this.amplitude;
+      Math.sin(time * this.frequency + this.phase) * 0.02 * this.amplitude * screenSizeFactor;
     this.velocityY +=
-      Math.cos(time * this.frequency + this.phase) * 0.02 * this.amplitude;
+      Math.cos(time * this.frequency + this.phase) * 0.02 * this.amplitude * screenSizeFactor;
 
     this.x += this.velocityX;
     this.y += this.velocityY;
@@ -82,7 +84,7 @@ class Node {
     this.velocityX *= 1;
     this.velocityY *= 1;
 
-    const maxVelocity = 2.0;
+    const maxVelocity = 2.0 * screenSizeFactor;
     const currentVelocity = Math.sqrt(
       this.velocityX * this.velocityX + this.velocityY * this.velocityY
     );
@@ -121,7 +123,8 @@ export default function NeuralNetworkBackground(): JSX.Element {
     canvas.width = width;
     canvas.height = height;
 
-    const nodeCount = Math.min(75, Math.floor((width * height) / 30000));
+    const nodeDensity = 0.00005;
+    const nodeCount = Math.min(100, Math.max(30, Math.floor(width * height * nodeDensity)));
     const nodes: Node[] = [];
 
     const gridCols = Math.ceil(Math.sqrt(nodeCount));
@@ -130,6 +133,8 @@ export default function NeuralNetworkBackground(): JSX.Element {
     const colSpacing = width / gridCols;
     const rowSpacing = height / gridRows;
 
+    const screenSizeFactor = Math.sqrt(width * height) / 1000;
+
     for (let i = 0; i < nodeCount; i++) {
       const col = i % gridCols;
       const row = Math.floor(i / gridCols);
@@ -137,7 +142,7 @@ export default function NeuralNetworkBackground(): JSX.Element {
       const x = col * colSpacing + Math.random() * colSpacing;
       const y = row * rowSpacing + Math.random() * rowSpacing;
 
-      const radius = Math.random() * 2 + 1;
+      const radius = (Math.random() * 2 + 1) * screenSizeFactor;
       const color =
         Math.random() > 0.7 ? "rgba(255,255,255,0.8)" : "rgba(200,200,200,0.7)";
 
@@ -163,7 +168,9 @@ export default function NeuralNetworkBackground(): JSX.Element {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     const nodes = nodesRef.current;
-    const connectionDistance = Math.min(canvas.width, canvas.height) / 5; // Increased from /5 to /3
+
+    const screenDiagonal = Math.sqrt(canvas.width * canvas.width + canvas.height * canvas.height);
+    const connectionDistance = screenDiagonal * 0.12;
 
     nodes.forEach((node) => {
       node.update();
