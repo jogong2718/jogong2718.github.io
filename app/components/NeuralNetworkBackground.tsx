@@ -33,8 +33,8 @@ class Node {
     this.canvasHeight = canvasHeight;
 
     const screenSizeFactor = Math.sqrt(canvasWidth * canvasHeight) / 1000;
-    this.velocityX = (Math.random() * 0.7 - 0.25) * screenSizeFactor;
-    this.velocityY = (Math.random() * 0.7 - 0.25) * screenSizeFactor;
+    this.velocityX = Math.random() * 0.1 - 0.25;
+    this.velocityY = Math.random() * 0.1 - 0.25;
     this.originalX = x;
     this.originalY = y;
 
@@ -47,7 +47,8 @@ class Node {
 
   update(): void {
     const time = Date.now() * 0.001;
-    const screenSizeFactor = Math.sqrt(this.canvasWidth * this.canvasHeight) / 1000;
+    const screenSizeFactor =
+      Math.sqrt(this.canvasWidth * this.canvasHeight) / 1000;
 
     const padding = this.radius + 5;
 
@@ -74,9 +75,15 @@ class Node {
     }
 
     this.velocityX +=
-      Math.sin(time * this.frequency + this.phase) * 0.02 * this.amplitude * screenSizeFactor;
+      Math.sin(time * this.frequency + this.phase) *
+      0.02 *
+      this.amplitude *
+      screenSizeFactor;
     this.velocityY +=
-      Math.cos(time * this.frequency + this.phase) * 0.02 * this.amplitude * screenSizeFactor;
+      Math.cos(time * this.frequency + this.phase) *
+      0.02 *
+      this.amplitude *
+      screenSizeFactor;
 
     this.x += this.velocityX;
     this.y += this.velocityY;
@@ -84,7 +91,7 @@ class Node {
     this.velocityX *= 1;
     this.velocityY *= 1;
 
-    const maxVelocity = 2.0 * screenSizeFactor;
+    const maxVelocity = 2.0;
     const currentVelocity = Math.sqrt(
       this.velocityX * this.velocityX + this.velocityY * this.velocityY
     );
@@ -124,7 +131,10 @@ export default function NeuralNetworkBackground(): JSX.Element {
     canvas.height = height;
 
     const nodeDensity = 0.00005;
-    const nodeCount = Math.min(100, Math.max(30, Math.floor(width * height * nodeDensity)));
+    const nodeCount = Math.min(
+      100,
+      Math.max(30, Math.floor(width * height * nodeDensity))
+    );
     const nodes: Node[] = [];
 
     const gridCols = Math.ceil(Math.sqrt(nodeCount));
@@ -169,7 +179,9 @@ export default function NeuralNetworkBackground(): JSX.Element {
 
     const nodes = nodesRef.current;
 
-    const screenDiagonal = Math.sqrt(canvas.width * canvas.width + canvas.height * canvas.height);
+    const screenDiagonal = Math.sqrt(
+      canvas.width * canvas.width + canvas.height * canvas.height
+    );
     const connectionDistance = screenDiagonal * 0.12;
 
     nodes.forEach((node) => {

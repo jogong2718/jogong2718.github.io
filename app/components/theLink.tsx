@@ -20,7 +20,7 @@ const theLink = ({ link }: Props) => {
                   "filter, opacity, inset" /* Optimize for animation */,
               }}
             ></div>
-            <button className="relative z-10 sm:w-60 h-20 sm:h-24 rounded-xl text-3xl sm:text-4xl px-6 py-3 inline-flex items-center justify-center font-bold text-white transition-all duration-1000 ease-in-out bg-gray-900 font-pj">
+            <button className="relative z-10 w-full sm:w-60 md:w-72 lg:w-80 h-20 sm:h-24 md:h-28 lg:h-32 rounded-xl text-3xl sm:text-4xl md:text-5xl lg:text-5xl px-6 py-3 inline-flex items-center justify-center font-bold text-white transition-all duration-1000 ease-in-out bg-gray-900 font-pj">
               Go to Blog
             </button>
           </div>
@@ -37,7 +37,7 @@ const theLink = ({ link }: Props) => {
                 willChange: "filter, opacity, inset",
               }}
             ></div>
-            <button className="relative z-10 sm:w-80 h-20 sm:h-24 rounded-xl text-3xl sm:text-4xl px-6 py-3 inline-flex items-center justify-center font-bold text-white transition-all duration-1000 ease-in-out bg-gray-900 font-pj">
+            <button className="relative z-10 w-full sm:w-80 md:w-96 lg:w-[28rem] h-20 sm:h-24 md:h-28 lg:h-32 rounded-xl text-3xl sm:text-4xl md:text-5xl lg:text-5xl px-6 py-3 inline-flex items-center justify-center font-bold text-white transition-all duration-1000 ease-in-out bg-gray-900 font-pj">
               Go to Projects
             </button>
           </div>
@@ -54,7 +54,7 @@ const theLink = ({ link }: Props) => {
                 willChange: "filter, opacity, inset",
               }}
             ></div>
-            <button className="relative z-10 sm:w-90 h-20 sm:h-24 rounded-xl text-3xl sm:text-4xl px-6 py-3 inline-flex items-center justify-center font-bold text-white transition-all duration-1000 ease-in-out bg-gray-900 font-pj">
+            <button className="relative z-10 w-full sm:w-90 md:w-[26rem] lg:w-[30rem] h-20 sm:h-24 md:h-28 lg:h-32 rounded-xl text-3xl sm:text-4xl md:text-5xl lg:text-5xl px-6 py-3 inline-flex items-center justify-center font-bold text-white transition-all duration-1000 ease-in-out bg-gray-900 font-pj">
               Go to Experience
             </button>
           </div>

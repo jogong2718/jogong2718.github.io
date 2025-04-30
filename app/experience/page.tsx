@@ -86,16 +86,17 @@ const page = () => {
                 name1="SciUGo"
               />
               <ExperienceCard
-                forWho="WAT.ai, Gluroo"
-                title="AI Director, ML Engineer"
+                forWho="Gluroo"
+                title="ML Engineer"
                 summary={
                   <div className="experience-card p-1 bg-transparent rounded-lg shadow-md text-left">
                     <p className="mt-2 text-gray-300">
                       Gluroo simplifies diabetes management by tracking fitness,
                       nutrition, and insulin use for people with diabetes (PWD).
-                      As part of the WAT.ai research team, I collaborated with
-                      20 graduates and undergraduates to develop innovative
-                      healthcare solutions for type 1 diabetes.
+                      As part of the WAT.ai research team tht is collaborating
+                      with Gluroo, I collaborated with 20 graduates and
+                      undergraduates to develop innovative healthcare solutions
+                      for type 1 diabetes.
                     </p>
                     <ul className="mt-4 pl-10 list-disc list-inside text-gray-300">
                       <li>
@@ -122,6 +123,29 @@ const page = () => {
                         future possible blood glucose trends, improving the time
                         in range of PWD by <strong>60%</strong>;
                       </li>
+                    </ul>
+                  </div>
+                }
+                link1="https://glucose-control-lab.lovable.app/"
+                link2="https://watai.ca/"
+                link3="https://gluroo.com/"
+                name1="Software"
+                name2="WAT.ai"
+                name3="Gluroo"
+              />
+              <ExperienceCard
+                forWho="WAT.ai, Gluroo"
+                title="AI Director"
+                summary={
+                  <div className="experience-card p-1 bg-transparent rounded-lg shadow-md text-left">
+                    <p className="mt-2 text-gray-300">
+                      WAT.ai is a student-run organization at the University of
+                      Waterloo that focuses on artificial intelligence research
+                      and development. As a Director, I led initiatives to
+                      foster collaboration and innovation among students
+                      passionate about AI.
+                    </p>
+                    <ul className="mt-4 pl-10 list-disc list-inside text-gray-300">
                       <li>
                         Directed & led workshops, project showcases, and
                         long-term hackathons for{" "}
@@ -135,12 +159,8 @@ const page = () => {
                     </ul>
                   </div>
                 }
-                link1="https://github.com/Blood-Glucose-Control"
-                link2="https://watai.ca/"
-                link3="https://gluroo.com/"
-                name1="Software"
-                name2="WAT.ai"
-                name3="Gluroo"
+                link1="https://watai.ca/"
+                name1="WAT.ai"
               />
             </div>
           </div>
