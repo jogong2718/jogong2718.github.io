@@ -4,7 +4,13 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { ThemeProvider } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -75,6 +81,9 @@ export default function RootLayout({
                     </Button>
                   </SheetTrigger>
                   <SheetContent side="right">
+                    <SheetHeader>
+                      <SheetTitle className="sr-only">Menu</SheetTitle>
+                    </SheetHeader>
                     <nav className="flex flex-col gap-4 mt-8">
                       <Link
                         href="/"

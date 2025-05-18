@@ -27,7 +27,7 @@ const blogPosts = {
       <h2>My Random Thoughts</h2>
       <p>At the time of writing this blog I have three stuffies beside me on my desk. Winter break is almost ending!!! I am also listening to ... Delaney Bailey??? When did i have her in my playlist jeez.</p>
       
-      <p>This is the first part of my thoughts series where I'll share random musings and reflections. I'm looking forward to writing more content and sharing my journey with you all.</p>
+      <p>This is the first part of my thoughts series where I&apos;ll share random musings and reflections. I&apos;m looking forward to writing more content and sharing my journey with you all.</p>
       
       <h2>In Progress...</h2>
       <p>More content coming soon! This page is still in progress...</p>
@@ -42,7 +42,7 @@ const blogPosts = {
       <h2>My First Term at Waterloo</h2>
       <p>First term at uwaterloo in a nutshell. Banger food there actually. Got addicted to bs 😓. Learned a bunch of new things doing AI research and projects with friends. Overall great time tho.</p>
       
-      <p>When I first arrived at the University of Waterloo, I wasn't sure what to expect. The campus was larger than I anticipated, but I quickly found my way around. The computer science program is challenging but rewarding.</p>
+      <p>When I first arrived at the University of Waterloo, I wasn&apos;t sure what to expect. The campus was larger than I anticipated, but I quickly found my way around. The computer science program is challenging but rewarding.</p>
       
       <h2>In Progress...</h2>
       <p>More content coming soon! This page is still in progress...</p>
@@ -74,10 +74,10 @@ const blogPosts = {
       <p>Neural networks learn by processing examples, each of which contains a known "input" and "result," forming probability-weighted associations between the two, which are stored within the data structure of the network itself. The training process involves adjusting the parameters, or the weights and biases, of the model in order to minimize the difference between the output of the network and the actual output.</p>
       
       <h2>Activation Functions</h2>
-      <p>Activation functions are mathematical equations that determine the output of a neural network. The function is attached to each neuron in the network, and determines whether it should be activated or not, based on whether each neuron's input is relevant for the model's prediction.</p>
+      <p>Activation functions are mathematical equations that determine the output of a neural network. The function is attached to each neuron in the network, and determines whether it should be activated or not, based on whether each neuron&apos;s input is relevant for the model&apos;s prediction.</p>
       
       <h2>Conclusion</h2>
-      <p>Neural networks are a powerful tool for machine learning and can be used to solve a wide variety of problems. In Part 2 of this series, we'll explore more advanced neural network architectures and their applications.</p>
+      <p>Neural networks are a powerful tool for machine learning and can be used to solve a wide variety of problems. In Part 2 of this series, we&apos;ll explore more advanced neural network architectures and their applications.</p>
     `,
   },
   "understanding-neural-networks-2": {
@@ -87,7 +87,7 @@ const blogPosts = {
     readTime: "10 min read",
     content: `
       <h2>Advanced Neural Network Architectures</h2>
-      <p>In Part 1, we covered the basics of neural networks. Now, let's dive into more advanced architectures that have revolutionized the field of deep learning.</p>
+      <p>In Part 1, we covered the basics of neural networks. Now, let&apos;s dive into more advanced architectures that have revolutionized the field of deep learning.</p>
       
       <h2>Convolutional Neural Networks (CNNs)</h2>
       <p>CNNs are particularly effective for image classification and recognition tasks. They use a mathematical operation called convolution in place of general matrix multiplication in at least one of their layers. This allows them to efficiently process grid-like data such as images.</p>
@@ -125,7 +125,7 @@ const blogPosts = {
         <li>State: The current situation of the agent</li>
         <li>Action: What the agent can do</li>
         <li>Reward: Feedback from the environment</li>
-        <li>Policy: The agent's strategy</li>
+        <li>Policy: The agent&apos;s strategy</li>
       </ul>
       
       <h2>Q-Learning and Deep Q-Networks</h2>
@@ -154,7 +154,7 @@ const blogPosts = {
       <p>Generative AI refers to artificial intelligence systems that can generate new content, such as images, text, audio, or video, that resembles human-created content. These models have seen remarkable progress in recent years.</p>
       
       <h2>Generative Adversarial Networks (GANs)</h2>
-      <p>GANs, introduced by Ian Goodfellow in 2014, consist of two neural networks—a generator and a discriminator—that are trained together. The generator creates samples, and the discriminator evaluates them. The generator's goal is to fool the discriminator, leading to increasingly realistic outputs.</p>
+      <p>GANs, introduced by Ian Goodfellow in 2014, consist of two neural networks—a generator and a discriminator—that are trained together. The generator creates samples, and the discriminator evaluates them. The generator&apos;s goal is to fool the discriminator, leading to increasingly realistic outputs.</p>
       
       <h2>Variational Autoencoders (VAEs)</h2>
       <p>VAEs are another type of generative model that learns to encode data into a latent space and then decode it back. Unlike GANs, VAEs provide a more stable training process and allow for more control over the generation process.</p>
@@ -243,7 +243,9 @@ export default async function BlogPost({
     return (
       <div className="container mx-auto px-4 py-12 text-center">
         <h1 className="text-2xl font-bold">Post not found</h1>
-        <p className="mt-4">The blog post you're looking for doesn't exist.</p>
+        <p className="mt-4">
+          The blog post you&apos;re looking for doesn&apos;t exist.
+        </p>
         <Button asChild className="mt-6">
           <Link href="/blog">Back to Blog</Link>
         </Button>

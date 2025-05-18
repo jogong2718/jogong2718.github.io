@@ -1,8 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import NeuralBackground from "@/components/neural-background";
 
 export default function Home() {
