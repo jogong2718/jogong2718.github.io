@@ -58,7 +58,7 @@ export default function Home() {
       <div className="container relative z-10 mx-auto px-4 py-24 sm:px-6 lg:px-8 animate-fadeIn">
         <div className="flex flex-col items-center justify-center space-y-10 text-center">
           <div className="space-y-6">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl bg-gradient-to-r from-palette-blue via-palette-lightBlue to-palette-blueGray bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl bg-gradient-to-r from-palette-blue via-palette-lightBlue to-palette-blueGray bg-clip-text text-transparent pb-2">
               Jonathan Gong
             </h1>
             <p className="mx-auto max-w-[700px] text-lg text-muted-foreground md:text-xl">
@@ -108,7 +108,7 @@ export default function Home() {
             {featuredProjects.map((project) => (
               <div
                 key={project.id}
-                className="group relative overflow-hidden rounded-lg border bg-background p-6 shadow-sm transition-all hover:shadow-md"
+                className="group relative overflow-hidden rounded-lg border bg-background p-6 shadow-[0_0_25px_rgba(59,130,246,0.4)] hover:shadow-[0_0_50px_rgba(59,130,246,0.5)] transition-shadow duration-300 ease-in-out"
               >
                 <div className="mb-4 text-sm font-medium text-palette-lightBlue">
                   {project.tags[0]}
@@ -135,7 +135,7 @@ export default function Home() {
             {featuredPosts.map((post) => (
               <div
                 key={post.id}
-                className="group relative overflow-hidden rounded-lg border bg-background p-6 shadow-sm transition-all hover:shadow-md"
+                className="group relative overflow-hidden rounded-lg border bg-background p-6 shadow-[0_0_25px_rgba(59,130,246,0.4)] hover:shadow-[0_0_50px_rgba(59,130,246,0.5)] transition-shadow duration-300 ease-in-out"
               >
                 <div className="mb-2 text-sm text-muted-foreground">
                   {post.date}
