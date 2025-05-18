@@ -1,176 +1,161 @@
-import React from "react";
-import Footer from "../components/footer";
-import ExperienceCard from "../components/experienceCard";
-import Head from "next/head";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import NeuralBackground from "@/components/neural-background";
+import { ExternalLink } from "lucide-react";
 
-const page = () => {
+export default function ExperiencePage() {
+  const experiences = [
+    {
+      title: "FullStack and ML Engineer",
+      company: "Aview International",
+      period: "2025 - Present",
+      description:
+        "Aview International is a startup that provides a platform to transform how you create, localize, and distribute content—all with the power of their AI toolkit.",
+      skills: ["AI", "ML", "React", "Node.js"],
+      link: "https://www.aviewint.com/",
+    },
+    {
+      title: "CV & Data Engineer",
+      company: "SciUGo",
+      period: "2025 - Present",
+      description:
+        "SciUGo helps researchers refine and create their western blot and gel figures. I worked on the CV model for the platform. Developed a SIFT derivative and novel metric to compare and match protein bands in western blot images, achieving a 98% accuracy.",
+      skills: [
+        "Computer Vision",
+        "SIFT",
+        "Image Processing",
+        "Data Engineering",
+      ],
+      link: "https://sciugo.com/",
+    },
+    {
+      title: "ML Engineer",
+      company: "Gluroo",
+      period: "2024 - Present",
+      description:
+        "Gluroo simplifies diabetes management by tracking fitness, nutrition, and insulin use for people with diabetes (PWD). As part of the WAT.ai research team that is collaborating with Gluroo, I collaborated with 20 graduates and undergraduates to develop innovative healthcare solutions for type 1 diabetes. Designed a robust sktime training pipeline with hyperparameter tuning and implemented a GMMHMM for blood glucose data (MAE of 0.02, accuracy of 93%).",
+      skills: [
+        "sktime",
+        "ClaSPSegmentation",
+        "KNN",
+        "HMM",
+        "GMMHMM",
+        "Causal ML",
+      ],
+      link: "https://gluroo.com/",
+    },
+    {
+      title: "AI Director",
+      company: "WAT.ai",
+      period: "2024 - Present",
+      description:
+        "WAT.ai is a student-run organization at the University of Waterloo that focuses on artificial intelligence research and development. As a Director, I led initiatives to foster collaboration and innovation among students passionate about AI. Directed & led workshops, project showcases, and long-term hackathons for 700+ organization members. Created videos on AI models (ViTs, HMMs, DDPG, etc.) and new technologies using the Manim Engine.",
+      skills: ["Leadership", "ViTs", "HMMs", "DDPG", "Manim Engine"],
+      link: "https://watai.ca/",
+    },
+  ];
+
+  const education = [
+    {
+      degree: "B.S. in Computer Science",
+      institution: "University of Waterloo",
+      period: "2024 - 2029",
+      focus: "Specialization in Artificial Intelligence",
+    },
+  ];
+
   return (
-    <>
-      <Head>
-        <title>Jonathan Gong Experience</title>
-        <meta
-          name="description"
-          content="Jonathan, Gong, Jonathan Gong, Expereince, Experiences, Jonathan Gong's Experience"
-        />
-      </Head>
-      <main className="flex flex-col min-h-screen overflow-y-auto pb-24">
-        <section className="bg-gray-transparent antialiased">
-          <div className="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl font-extrabold leading-tight tracking-tight  sm:text-4xl text-white">
-                Experience
-              </h2>
-              <p className="mt-4 text-base font-normal sm:text-xl text-gray-400">
-                Here are my latest jobs, positions, interships, and experiences
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-x-20 gap-y-12 sm:grid-cols-1 lg:grid-cols-1">
-              <ExperienceCard
-                forWho="Aview International"
-                title="FullStack and ML Engineer"
-                summary={
-                  <div className="experience-card p-1 bg-transparent rounded-lg shadow-md text-left">
-                    <p className="mt-2 text-gray-300">
-                      Aview International is a startup that provides a platform
-                      to transform how you create, localize, and distribute
-                      content—all with the power of their AI toolkit.
-                    </p>
-                    <ul className="mt-4 pl-10 list-disc list-inside text-gray-300">
-                      {/* <li>
-                        Developed a <strong>React</strong> web application for
-                        content creators to manage their projects and connect
-                        with clients;
-                      </li>
-                      <li>
-                        Implemented a <strong>Node.js</strong> backend with
-                        Express and MongoDB to store user data and project
-                        information;
-                      </li>
-                      <li>
-                        Integrated <strong>Google Cloud Platform</strong> for
-                        cloud storage and hosting;
-                      </li>
-                      <li>
-                        Developed a <strong>Audio model</strong> to translate
-                        and automatically generate subtitles and dubbing for
-                        videos;
-                      </li> */}
-                      Incoming...
-                    </ul>
-                  </div>
-                }
-                link1="https://www.aviewint.com/"
-                name1="Aview International"
-              />
-              <ExperienceCard
-                forWho="SciUGo"
-                title="CV & Data Engineer"
-                summary={
-                  <div className="experience-card p-1 bg-transparent rounded-lg shadow-md text-left">
-                    <p className="mt-2 text-gray-300">
-                      SciUGo helps resarchers refine and create their western
-                      blot and gel figures. I worked on the CV model for the
-                      platform.
-                    </p>
-                    <ul className="mt-4 pl-10 list-disc list-inside text-gray-300">
-                      <li>
-                        Developed a SIFT derivative and novel metric to compare
-                        and match protein bands in western blot images,
-                        achieving a<strong> 98% accuracy</strong>;
-                      </li>
-                    </ul>
-                  </div>
-                }
-                link1="https://sciugo.com/"
-                name1="SciUGo"
-              />
-              <ExperienceCard
-                forWho="Gluroo"
-                title="ML Engineer"
-                summary={
-                  <div className="experience-card p-1 bg-transparent rounded-lg shadow-md text-left">
-                    <p className="mt-2 text-gray-300">
-                      Gluroo simplifies diabetes management by tracking fitness,
-                      nutrition, and insulin use for people with diabetes (PWD).
-                      As part of the WAT.ai research team tht is collaborating
-                      with Gluroo, I collaborated with 20 graduates and
-                      undergraduates to develop innovative healthcare solutions
-                      for type 1 diabetes.
-                    </p>
-                    <ul className="mt-4 pl-10 list-disc list-inside text-gray-300">
-                      <li>
-                        Designed a{" "}
-                        <strong>robust sktime training pipeline</strong> with
-                        hyperparameter tuning, dataset selection, train-test
-                        splitting, and integration of models (
-                        <strong>
-                          ClaSPSegmentation, KNN, and HMM variations
-                        </strong>
-                        ). Managed model fitting, prediction, error analysis,
-                        and ensured reliability with the{" "}
-                        <strong>unittest framework</strong>.
-                      </li>
-                      <li>
-                        Implemented a <strong>GMMHMM</strong> for blood glucose
-                        data to predict and improve short-term prandial (during
-                        meal-time) and postprandial blood glucose level outcomes
-                        for PWD (<strong>MAE of 0.02, accuracy of 93%</strong>);
-                      </li>
-                      <li>
-                        Developed novel ITS <strong>causal ML models</strong>{" "}
-                        performing quasi-experiments to predict and interpolate
-                        future possible blood glucose trends, improving the time
-                        in range of PWD by <strong>60%</strong>;
-                      </li>
-                    </ul>
-                  </div>
-                }
-                link1="https://glucose-control-lab.lovable.app/"
-                link2="https://watai.ca/"
-                link3="https://gluroo.com/"
-                name1="Software"
-                name2="WAT.ai"
-                name3="Gluroo"
-              />
-              <ExperienceCard
-                forWho="WAT.ai, Gluroo"
-                title="AI Director"
-                summary={
-                  <div className="experience-card p-1 bg-transparent rounded-lg shadow-md text-left">
-                    <p className="mt-2 text-gray-300">
-                      WAT.ai is a student-run organization at the University of
-                      Waterloo that focuses on artificial intelligence research
-                      and development. As a Director, I led initiatives to
-                      foster collaboration and innovation among students
-                      passionate about AI.
-                    </p>
-                    <ul className="mt-4 pl-10 list-disc list-inside text-gray-300">
-                      <li>
-                        Directed & led workshops, project showcases, and
-                        long-term hackathons for{" "}
-                        <strong>700+ organization members</strong>;
-                      </li>
-                      <li>
-                        Created videos on AI models (ViTs, HMMs, DDPG, etc.) and
-                        new technologies using the <strong>Manim Engine</strong>
-                        .
-                      </li>
-                    </ul>
-                  </div>
-                }
-                link1="https://watai.ca/"
-                name1="WAT.ai"
-              />
-            </div>
-          </div>
-        </section>
-        <div className="fixed bottom-0 w-full">
-          <Footer />
+    <div className="relative min-h-screen">
+      <NeuralBackground />
+      <div className="container relative z-10 mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mb-12 space-y-4 text-center">
+          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl bg-gradient-to-r from-palette-blue via-palette-lightBlue to-palette-blueGray bg-clip-text text-transparent pb-2">
+            Experience
+          </h1>
+          <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
+            My professional journey and educational background in machine
+            learning and software development.
+          </p>
         </div>
-      </main>
-    </>
-  );
-};
 
-export default page;
+        <div className="mb-16 space-y-6">
+          <h2 className="text-2xl font-bold tracking-tight">Work Experience</h2>
+          <div className="grid gap-6">
+            {experiences.map((exp, index) => (
+              <Card
+                key={index}
+                className="border bg-background/60 backdrop-blur-sm"
+              >
+                <CardHeader>
+                  <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+                    <div>
+                      <CardTitle>{exp.title}</CardTitle>
+                      <CardDescription>{exp.company}</CardDescription>
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {exp.period}
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p>{exp.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {exp.skills.map((skill, i) => (
+                      <Badge key={i} variant="secondary">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                  {exp.link && (
+                    <a
+                      href={exp.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm font-medium text-foreground hover:text-blue-500"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Learn more
+                    </a>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          <h2 className="text-2xl font-bold tracking-tight">Education</h2>
+          <div className="grid gap-6">
+            {education.map((edu, index) => (
+              <Card
+                key={index}
+                className="border bg-background/60 backdrop-blur-sm"
+              >
+                <CardHeader>
+                  <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+                    <div>
+                      <CardTitle>{edu.degree}</CardTitle>
+                      <CardDescription>{edu.institution}</CardDescription>
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {edu.period}
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p>{edu.focus}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

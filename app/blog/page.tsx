@@ -1,57 +1,86 @@
-import React from "react";
-import Footer from "../components/footer";
-import Article from "../components/article";
-import Head from "next/head";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import NeuralBackground from "@/components/neural-background";
 
-const BlogPage = () => {
+export default function BlogPage() {
+  const posts = [
+    {
+      id: "thoughts-pt-1",
+      title: "Thoughts (Pt 1)",
+      date: "December 30, 2024",
+      excerpt:
+        "At the time of writing this blog I have three stuffies beside me on my desk. Winter break is almost ending!!! I am also listening to ... Delaney Bailey??? When did i have her in my playlist jeez.",
+      readTime: "3 min read",
+      category: "Personal",
+    },
+    {
+      id: "university-life-y1-t1",
+      title: "University Life (Y1 T1)",
+      date: "December 30, 2024",
+      excerpt:
+        "First term at uwaterloo in a nutshell. Banger food there actually. Got addicted to bs 😓. Learned a bunch of new things doing AI research and projects with friends. Overall great time tho.",
+      readTime: "4 min read",
+      category: "University",
+    },
+  ];
+
   return (
-    <>
-      <Head>
-        <title>Jonathan Gong Blog</title>
-        <meta
-          name="description"
-          content="Jonathan, Gong, Jonathan Gong's Blog"
-        />
-      </Head>
-      <main className="flex flex-col min-h-screen overflow-y-auto pb-24">
-        <section className="bg-transparent">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-              <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-white">
-                My Blog
-              </h2>
-              <p className="font-light sm:text-xl text-gray-400">
-                Read my latest blog posts, I hope to have some collabs too ;). I
-                write about anything tech and my life!
-              </p>
-            </div>
-            <div className="grid gap-8 lg:grid-cols-2">
-              <Article
-                date="Monday, Dec 30, 2024"
-                title="Thoughts (Pt 1)"
-                summary="At the time of writing this blog I have three stuffies beside me
-                on my desk. Winter break is almost ending!!! I am also listening
-                to ... Delaney Bailey??? When did i have her in my playlist
-                jeez."
-                link="1"
-              />
-              <Article
-                date="Monday, Dec 30, 2024"
-                title="University Life (Y1 T1)"
-                summary="First term at uwaterloo in a nutshell. Banger food there
-                actually. Got addicted to bs 😓. Learned a bunch of new things
-                doing AI research and projects with friends. Overall great time tho."
-                link="2"
-              />
-            </div>
-          </div>
-        </section>
-        <div className="fixed bottom-0 w-full">
-          <Footer />
+    <div className="relative min-h-screen">
+      <NeuralBackground />
+      <div className="container relative z-10 mx-auto px-4 py-12 sm:px-6 lg:px-8 ">
+        <div className="mb-12 space-y-4 text-center">
+          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl bg-gradient-to-r from-palette-blue via-palette-lightBlue to-palette-blueGray bg-clip-text text-transparent pb-2">
+            My Blog
+          </h1>
+          <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
+            Read my latest blog posts, I hope to have some collabs too ;). I
+            write about anything tech and my life!
+          </p>
         </div>
-      </main>
-    </>
-  );
-};
 
-export default BlogPage;
+        <div className="grid gap-6 md:grid-cols-2">
+          {posts.map((post) => (
+            <Card
+              key={post.id}
+              className="border bg-background/60 backdrop-blur-sm"
+            >
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <div className="text-sm font-medium text-palette-lightBlue">
+                    {post.category}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {post.date}
+                  </div>
+                </div>
+                <CardTitle className="mt-2">{post.title}</CardTitle>
+                <CardDescription>{post.excerpt}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-sm text-muted-foreground">
+                  {post.readTime}
+                </div>
+              </CardContent>
+              <CardFooter>
+                <Link
+                  href={`/blog/${post.id}`}
+                  className="inline-flex items-center text-sm font-medium text-foreground hover:text-primary"
+                >
+                  Read full article <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

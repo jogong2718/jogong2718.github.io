@@ -2,21 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #000000;
-  --foreground: #ffffff;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 95%;
+    --foreground: 204 51% 41%;
+    --card: 0 0% 100%;
+    --card-foreground: 204 51% 41%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 204 51% 41%;
+    --primary: 204 51% 41%;
+    --primary-foreground: 0 0% 95%;
+    --secondary: 203 38% 73%;
+    --secondary-foreground: 204 51% 41%;
+    --muted: 203 38% 73%;
+    --muted-foreground: 204 51% 25%;
+    --accent: 219 29% 68%;
+    --accent-foreground: 204 51% 41%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 203 38% 73%;
+    --input: 203 38% 73%;
+    --ring: 204 51% 41%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 95%;
+    --card: 204 51% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 204 51% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 204 51% 41%;
+    --primary-foreground: 0 0% 95%;
+    --secondary: 203 38% 30%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 203 38% 30%;
+    --muted-foreground: 203 38% 73%;
+    --accent: 219 29% 40%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 203 38% 30%;
+    --input: 203 38% 30%;
+    --ring: 204 51% 41%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 0rem;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Custom header styles for blog posts */
+  .prose h2 {
+    @apply text-3xl font-bold text-white mt-8 mb-4;
+  }
+  
+  .prose h3 {
+    @apply text-2xl font-bold text-white mt-6 mb-3;
+  }
+  
+  .prose h4 {
+    @apply text-xl font-bold text-white mt-4 mb-2;
+  }
+}
+
+/* Page transition effects */
+.animate-fadeIn {
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+canvas.neural-background {
+  opacity: 1 !important;
 }
