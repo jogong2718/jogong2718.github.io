@@ -230,6 +230,12 @@ const blogPosts = {
   },
 };
 
+export async function generateStaticParams() {
+  return Object.keys(blogPosts).map((slug) => ({
+    slug,
+  }));
+}
+
 // Define the props structure for this page component
 interface BlogPostPageProps {
   params: Promise<{
