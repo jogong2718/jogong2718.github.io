@@ -45,7 +45,7 @@ export default function NeuralBackground() {
 
       const img = new Image();
       img.crossOrigin = "anonymous";
-      img.src = "/Gawr_Gura_3D_Model.png";
+      img.src = "/Gura_pic.png";
 
       img.onload = () => {
         // Create a temporary canvas to process the image
@@ -118,18 +118,22 @@ export default function NeuralBackground() {
         }
 
         // Sample a subset of edge points to create a reasonable number of nodes
-        const nodeCount = Math.min(
-          Math.floor((window.innerWidth * window.innerHeight) / 15000),
-          100
+        const outlinePointTarget = 200; // Increased target for outline points
+        const totalNodeCap = Math.min(
+          Math.floor((window.innerWidth * window.innerHeight) / 10000), // Increased density
+          200 // Increased overall cap
         );
 
         // Select points from the edge points array evenly
         const selectedPoints: { x: number; y: number; radius: number }[] = [];
-        const step = Math.max(1, Math.floor(edgePoints.length / nodeCount));
+        const step = Math.max(
+          1,
+          Math.floor(edgePoints.length / outlinePointTarget)
+        );
 
         for (
           let i = 0;
-          i < edgePoints.length && selectedPoints.length < nodeCount;
+          i < edgePoints.length && selectedPoints.length < outlinePointTarget;
           i += step
         ) {
           selectedPoints.push({
@@ -141,10 +145,10 @@ export default function NeuralBackground() {
 
         // Scale and position the points to center the image on the canvas
         const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
+        const centerY = canvas.height / 1.9;
         const scale =
           Math.min(canvas.width / processWidth, canvas.height / processHeight) *
-          1.1; // Increased from 0.6 to 0.9 to make the outline larger
+          0.9; // Changed from 1.1 to 0.8 to make the outline smaller
 
         selectedPoints.forEach((point) => {
           point.x = centerX + (point.x - processWidth / 2) * scale;
@@ -154,27 +158,23 @@ export default function NeuralBackground() {
         initialNodesRef.current = selectedPoints;
         imageLoadedRef.current = true;
 
-        // Initialize nodes with the Gura outline positions
-        initNodes();
+        // Initialize nodes with the Gura outline positions, passing the calculated totalNodeCap
+        initNodes(totalNodeCap);
       };
     };
 
     // Initialize nodes
-    const initNodes = () => {
+    const initNodes = (totalNodeCap: number) => {
       nodes = [];
-      const nodeCount = Math.min(
-        Math.floor((window.innerWidth * window.innerHeight) / 15000),
-        100
-      );
+      const nodeCount = totalNodeCap;
 
       // Check if we have outline points
       if (imageLoadedRef.current && initialNodesRef.current.length > 0) {
-        // Start with Gura outline
-        for (
-          let i = 0;
-          i < initialNodesRef.current.length && i < nodeCount;
-          i++
-        ) {
+        const numOutlineNodesToUse = Math.min(
+          initialNodesRef.current.length,
+          nodeCount
+        );
+        for (let i = 0; i < numOutlineNodesToUse; i++) {
           const point = initialNodesRef.current[i];
           nodes.push({
             x: point.x,
@@ -188,8 +188,8 @@ export default function NeuralBackground() {
           });
         }
 
-        // Fill the rest with random nodes if needed
-        for (let i = initialNodesRef.current.length; i < nodeCount; i++) {
+        // Fill the rest with random nodes if needed, up to nodeCount
+        for (let i = numOutlineNodesToUse; i < nodeCount; i++) {
           nodes.push({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
