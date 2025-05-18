@@ -230,12 +230,16 @@ const blogPosts = {
   },
 };
 
-export default async function BlogPost({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  // Use the slug directly from params
+// Define the props structure for this page component
+interface BlogPostPageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+  // searchParams?: { [key: string]: string | string[] | undefined }; // Uncomment if you use searchParams
+}
+
+export default async function BlogPost({ params }: BlogPostPageProps) {
+  // Use the slug directly from params after awaiting
   const { slug } = await params;
   const post = blogPosts[slug as keyof typeof blogPosts];
 
