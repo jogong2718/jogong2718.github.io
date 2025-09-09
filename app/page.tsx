@@ -7,10 +7,12 @@ import QuoteHero from "@/components/QuoteHero"
 import ClientsSection from "@/components/ClientsSection"
 import Footer from "@/components/Footer"
 import Section from "@/components/Section"
+import CustomCursor from "@/components/CustomCursor"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-black text-white cursor-none">
+      <CustomCursor />
       <Header />
       <Section id="hero">
         <Hero />

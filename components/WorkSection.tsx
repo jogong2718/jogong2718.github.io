@@ -1,5 +1,6 @@
 "use client"
 
+import React, { useEffect, useRef, useState } from "react"
 import WorkCard from "./WorkCard"
 
 const workItems = [
@@ -120,11 +121,50 @@ export default function WorkSection() {
 	const leftOffsets = ["-translate-x-8", "-translate-x-4", "-translate-x-10"]
 	const rightOffsets = ["translate-x-8", "translate-x-4", "translate-x-10"]
 
+	const sectionRef = useRef<HTMLElement | null>(null)
+	const [titleScale, setTitleScale] = useState(1)
+
+	useEffect(() => {
+		const el = sectionRef.current
+		if (!el) return
+
+		let ticking = false
+		const update = () => {
+			const rect = el.getBoundingClientRect()
+			const viewportH = window.innerHeight || 1
+			const total = Math.max(1, rect.height - viewportH)
+			const progressed = Math.min(total, Math.max(0, -rect.top))
+			const p = progressed / total // 0..1 through the section
+			const s = 1 - p * 0.15 // shrink up to 15%
+			setTitleScale(Math.max(0.65, s))
+			ticking = false
+		}
+		const onScroll = () => {
+			if (!ticking) {
+				ticking = true
+				requestAnimationFrame(update)
+			}
+		}
+		update()
+		window.addEventListener("scroll", onScroll, { passive: true })
+		window.addEventListener("resize", update)
+		return () => {
+			window.removeEventListener("scroll", onScroll)
+			window.removeEventListener("resize", update)
+		}
+	}, [])
+
 	return (
-		<section className="relative">
+		<section className="relative" ref={sectionRef}>
 			{/* Sticky centered heading */}
 			<div className="pointer-events-none sticky top-1/2 -translate-y-1/2 z-10 flex items-center justify-center">
-				<h2 className="text-6xl md:text-8xl font-normal tracking-tight">
+				<h2
+					className="text-6xl md:text-8xl font-normal tracking-tight"
+					style={{
+						transform: `scale(${titleScale})`,
+						transformOrigin: "center",
+					}}
+				>
 					Projects
 				</h2>
 			</div>
