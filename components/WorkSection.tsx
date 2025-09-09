@@ -63,7 +63,7 @@ export default function WorkSection() {
 	const rightOffsets = ["translate-x-8", "translate-x-4", "translate-x-10"]
 
 	return (
-		<section className="relative py-32">
+		<section className="relative">
 			{/* Sticky centered heading */}
 			<div className="pointer-events-none sticky top-1/2 -translate-y-1/2 z-10 flex items-center justify-center">
 				<h2 className="text-6xl md:text-8xl font-normal tracking-tight">
@@ -71,7 +71,7 @@ export default function WorkSection() {
 				</h2>
 			</div>
 
-			<div className="relative z-0 mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-3">
+			<div className="relative z-10 mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-3">
 				{/* Left column with very large vertical gaps */}
 				<div className="flex flex-col items-end gap-[120vh] md:gap-[150vh] mt-[18vh] md:mt-[24vh]">
 					{left.map((p, i) => (
