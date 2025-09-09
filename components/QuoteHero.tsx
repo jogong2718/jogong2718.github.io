@@ -13,7 +13,7 @@ export default function QuoteHero() {
           }}
         />
         <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-          <source src="https://framerusercontent.com/assets/6OMYob0uMt1jfOP5AqoQJ1L8s.mp4" type="video/mp4" />
+          <source src="/IMG_1959.mp4" type="video/mp4" />
         </video>
       </div>
 
