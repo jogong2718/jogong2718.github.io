@@ -1,57 +1,26 @@
-import React from "react";
-import Footer from "../components/footer";
-import Article from "../components/article";
-import Head from "next/head";
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 
-const BlogPage = () => {
+export default function BlogPage() {
   return (
-    <>
-      <Head>
-        <title>Jonathan Gong Blog</title>
-        <meta
-          name="description"
-          content="Jonathan, Gong, Jonathan Gong's Blog"
-        />
-      </Head>
-      <main className="flex flex-col min-h-screen overflow-y-auto pb-24">
-        <section className="bg-transparent">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-              <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-white">
-                My Blog
-              </h2>
-              <p className="font-light sm:text-xl text-gray-400">
-                Read my latest blog posts, I hope to have some collabs too ;). I
-                write about anything tech and my life!
-              </p>
-            </div>
-            <div className="grid gap-8 lg:grid-cols-2">
-              <Article
-                date="Monday, Dec 30, 2024"
-                title="Thoughts (Pt 1)"
-                summary="At the time of writing this blog I have three stuffies beside me
-                on my desk. Winter break is almost ending!!! I am also listening
-                to ... Delaney Bailey??? When did i have her in my playlist
-                jeez."
-                link="1"
-              />
-              <Article
-                date="Monday, Dec 30, 2024"
-                title="University Life (Y1 T1)"
-                summary="First term at uwaterloo in a nutshell. Banger food there
-                actually. Got addicted to bs 😓. Learned a bunch of new things
-                doing AI research and projects with friends. Overall great time tho."
-                link="2"
-              />
-            </div>
+    <main className="min-h-screen bg-black text-white">
+      <Header />
+      
+      <div className="flex items-center justify-center min-h-[80vh] px-4">
+        <div className="text-center max-w-2xl mx-auto">
+          <h1 className="text-6xl md:text-8xl font-normal tracking-tight mb-8">
+            Blog
+          </h1>
+          <div className="inline-block px-6 py-3 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-8">
+            <span className="text-sm font-medium text-white/80">Work in Progress</span>
           </div>
-        </section>
-        <div className="fixed bottom-0 w-full">
-          <Footer />
+          <p className="text-xl md:text-2xl text-gray-400 leading-relaxed">
+            Coming soon - insights, thoughts, and stories from my journey in technology and development.
+          </p>
         </div>
-      </main>
-    </>
-  );
-};
-
-export default BlogPage;
+      </div>
+      
+      <Footer />
+    </main>
+  )
+}
