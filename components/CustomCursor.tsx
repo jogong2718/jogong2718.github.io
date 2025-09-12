@@ -4,7 +4,8 @@ import { useEffect, useMemo, useRef, useState } from "react"
 
 // Custom cursor with white dot, halo glow, and animated sparks
 export default function CustomCursor() {
-  const isCoarse = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(pointer: coarse)").matches
+  const [mounted, setMounted] = useState(false)
+  const [isCoarse, setIsCoarse] = useState(true) // default to true to prevent SSR issues
   const [interactive, setInteractive] = useState(false)
   const [, setTick] = useState(0) // force re-render per frame for position/sparks
   const target = useRef({ x: 0, y: 0 })
@@ -12,6 +13,13 @@ export default function CustomCursor() {
   const intensity = useRef(0) // 0 = normal, 1 = interactive
   const raf = useRef<number | null>(null)
   const styleElRef = useRef<HTMLStyleElement | null>(null)
+
+  // Check for coarse pointer only on client
+  useEffect(() => {
+    setMounted(true)
+    const coarse = window.matchMedia && window.matchMedia("(pointer: coarse)").matches
+    setIsCoarse(coarse)
+  }, [])
 
   // Precompute sparks positions
   const sparks = useMemo(
@@ -28,12 +36,24 @@ export default function CustomCursor() {
   useEffect(() => {
     if (isCoarse) return
 
-    // Hide the native cursor globally on fine pointers
+    // Hide the native cursor globally on fine pointers (Chrome-compatible)
     const styleEl = document.createElement("style")
     styleEl.id = "custom-cursor-hide"
-    styleEl.textContent = `@media (pointer: fine){html,body,*{cursor:none !important;}}`
+    styleEl.textContent = `
+      @media (pointer: fine) {
+        *, *:before, *:after {
+          cursor: none !important;
+        }
+        html, body {
+          cursor: none !important;
+        }
+      }
+    `
     document.head.appendChild(styleEl)
     styleElRef.current = styleEl
+    
+    // Also set cursor none on document body as fallback
+    document.body.style.cursor = 'none'
 
     const isElemInteractive = (el: Element | null): boolean => {
       let node: Element | null = el
@@ -76,10 +96,12 @@ export default function CustomCursor() {
         styleElRef.current.remove()
         styleElRef.current = null
       }
+      // Restore cursor
+      document.body.style.cursor = ''
     }
   }, [isCoarse, interactive])
 
-  if (isCoarse) return null
+  if (!mounted || isCoarse) return null
 
   const k = intensity.current // 0..1
   const lerp = (a: number, b: number) => a + (b - a) * k
