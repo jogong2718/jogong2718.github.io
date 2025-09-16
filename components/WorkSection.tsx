@@ -7,7 +7,7 @@ const workItems = [
 	{
 		title: "Pianofi",
 		year: "2025",
-		image: "/ChatGPT Image Sep 5, 2025, 03_02_26 PM.png",
+		image: "/pianofi.png",
 		link: "https://pianofi.ca",
 		size: "large",
 		description: (
