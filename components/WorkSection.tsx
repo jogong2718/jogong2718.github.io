@@ -5,9 +5,56 @@ import WorkCard from "./WorkCard"
 
 const workItems = [
 	{
+		title: "Pianofi",
+		year: "2025",
+		image: "/ChatGPT Image Sep 5, 2025, 03_02_26 PM.png",
+		link: "https://pianofi.ca",
+		size: "large",
+		description: (
+			<span>
+				PianoFi is an advanced AI-powered music transcription service that turns any audio file into professional piano sheet music. Simply upload your audio, and our cutting-edge AI models will generate accurate piano transcriptions in multiple formats.
+			</span>
+		),
+	},
+		{
+		title: "SoccerMetrics",
+		year: "2025",
+		image: "/68747470733a2f2f7777772e676f72646f6e7a68616e672e63612f6173736574732f736f636365722d4430776961674a532e706e67.png",
+		link: "https://github.com/jogong2718/SoccerMetrics",
+		size: "medium",
+		description: (
+			<span>
+				The platform provides actionable biomechanical insights by analyzing 3D
+				pose and tracking ball movement. Using MediaPipe's GHUM 3D model and
+				Ultralytics YOLOv8, it calculates joint angles and other metrics,
+				enabling comparisons to optimal standards.
+			</span>
+		),
+	},
+		{
+		title: "Multi-output Network for Medical Imaging",
+		year: "2024",
+		image: "/Gawr-Gura-PNG-Isolated-Image.png",
+		link: "https://doi.org/10.1007/s44163-022-00045-1",
+		size: "small",
+		description: (
+			<p>
+				Inspired by my Hybrid Classification Segmentation Image model, this
+				model was further developed and published as a paper in Discover
+				Artificial Intelligence. Received media coverage:{" "}
+				<a
+					className="underline text-blue-400"
+					href="https://doi.org/10.33548/SCIENTIA849"
+				>
+					Link
+				</a>
+			</p>
+		),
+	},
+	{
 		title: "United Mobility & Healthcare",
 		year: "2025",
-		image: "/Gawr-Gura-PNG-Isolated-Image.png",
+		image: "/icon.png",
 		link: "https://deliriumcontrol.vercel.app",
 		size: "large",
 		description: (
@@ -22,36 +69,9 @@ const workItems = [
 		),
 	},
 	{
-		title: "SoccerMetrics",
-		year: "2025",
-		image: "/Gawr-Gura-PNG-Isolated-Image.png",
-		link: "https://github.com/jogong2718/SoccerMetrics",
-		size: "medium",
-		description: (
-			<span>
-				The platform provides actionable biomechanical insights by analyzing 3D
-				pose and tracking ball movement. Using MediaPipe's GHUM 3D model and
-				Ultralytics YOLOv8, it calculates joint angles and other metrics,
-				enabling comparisons to optimal standards.
-			</span>
-		),
-	},
-	{
-		title: "Pianofi",
-		year: "2025",
-		image: "/Gawr-Gura-PNG-Isolated-Image.png",
-		link: "https://pianofi.ca",
-		size: "large",
-		description: (
-			<span>
-				PianoFi is an advanced AI-powered music transcription service that turns any audio file into professional piano sheet music. Simply upload your audio, and our cutting-edge AI models will generate accurate piano transcriptions in multiple formats.
-			</span>
-		),
-	},
-	{
 		title: "WatClub",
 		year: "2024",
-		image: "/Gawr-Gura-PNG-Isolated-Image.png",
+		image: "/watclub background.jpg",
 		link: "https://github.com/Brucewang15/WatClub",
 		size: "small",
 		description: (
@@ -77,29 +97,9 @@ const workItems = [
 		),
 	},
 	{
-		title: "Multi-output Network for Medical Imaging",
-		year: "2024",
-		image: "/Gawr-Gura-PNG-Isolated-Image.png",
-		link: "https://doi.org/10.1007/s44163-022-00045-1",
-		size: "small",
-		description: (
-			<p>
-				Inspired by my Hybrid Classification Segmentation Image model, this
-				model was further developed and published as a paper in Discover
-				Artificial Intelligence. Received media coverage:{" "}
-				<a
-					className="underline text-blue-400"
-					href="https://doi.org/10.33548/SCIENTIA849"
-				>
-					Link
-				</a>
-			</p>
-		),
-	},
-	{
 		title: "Hybrid Classification Segmentation Model",
 		year: "2023",
-		image: "/Gawr-Gura-PNG-Isolated-Image.png",
+		image: "/199414405-97919ef9-9e3b-4f85-96d8-667d198d83b0.png",
 		link: "https://github.com/jogong2718/COVID-19-Radiography-Models",
 		size: "large",
 		description: (
