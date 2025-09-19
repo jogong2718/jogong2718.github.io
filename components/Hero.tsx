@@ -4,9 +4,9 @@ import AnimatedText from "./AnimatedText"
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] md:min-h-screen flex flex-col justify-center md:justify-end px-4 md:px-10 py-4 md:py-16">
+    <section className="relative min-h-[100svh] md:min-h-screen flex flex-col justify-center md:justify-center px-4 md:px-10 py-4 md:pt-8 md:pb-16">
       {/* Background gradient blur effect */}
-      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 blur-[80px] mix-blend-hard-light md:w-full md:h-3/4" />
+      <div className="absolute left-0 w-1/2 h-1/2 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 blur-[80px] mix-blend-hard-light md:w-full md:h-3/4 md:bottom-auto" />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="text-center md:text-left">
