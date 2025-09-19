@@ -21,7 +21,7 @@ export default function QuoteHero() {
       <div className="relative z-10 max-w-4xl mx-auto px-8 md:px-16">
         <div className="text-3xl md:text-4xl lg:text-5xl font-normal leading-[0.9] tracking-tight text-white mix-blend-difference">
           <AnimatedText delay={0}>
-            Whether you're here to stalk me, contact me, or somehow stumble upon this page by accident, welcome! 
+            Whether you're here to stalk me, contact me, or somehow stumbled upon this page by accident, welcome! 
             I hope you find something that makes your time here worthwhile.
           </AnimatedText>
 
