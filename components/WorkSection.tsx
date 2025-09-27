@@ -8,7 +8,7 @@ const workItems = [
 		title: "Pianofi",
 		year: "2025",
 		image: "/pianofi.png",
-		link: "https://pianofi.ca",
+		link: "https://www.pianofi.ca",
 		size: "large",
 		description: (
 			<span>
