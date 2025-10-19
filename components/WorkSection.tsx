@@ -57,7 +57,7 @@ const workItems = [
   },
   {
     title: "Lexis",
-    year: "2024",
+    year: "2025",
     image: "/lexis_icon.png",
     link: "https://github.com/jogong2718/lexis",
     size: "large",
