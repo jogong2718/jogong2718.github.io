@@ -208,6 +208,7 @@ export default function WorkSection() {
                 index={i}
                 link={p.link}
                 description={p.description}
+                showTooltip={i === 0}
               />
             </div>
           ))}
